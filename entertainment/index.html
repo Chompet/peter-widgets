@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entertainment Picker</title>
+
+<style>
+body{
+  margin:0;
+  padding:14px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#ffffff;
+  color:#2f3437;
+}
+.card{
+  border:1px solid #e6e6e6;
+  border-radius:14px;
+  padding:14px;
+  max-width:520px;
+  margin:auto;
+}
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+.title{
+  font-size:18px;
+  font-weight:700;
+}
+button{
+  border:1px solid #ddd;
+  background:#f7f7f7;
+  border-radius:999px;
+  padding:5px 10px;
+  cursor:pointer;
+  font-size:12px;
+}
+.pick{
+  padding:8px 0;
+  border-bottom:1px solid #eee;
+  font-size:14px;
+}
+.pick:last-child{
+  border-bottom:none;
+}
+.label{
+  font-weight:700;
+  margin-right:6px;
+}
+.note{
+  margin-top:10px;
+  font-size:11px;
+  color:#888;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="header">
+    <div class="title">🎲 Random Picks</div>
+    <button onclick="shuffle()">Shuffle</button>
+  </div>
+
+  <div class="pick"><span class="label">🎬 Watch:</span><span id="movie"></span></div>
+  <div class="pick"><span class="label">🎧 Listen:</span><span id="album"></span></div>
+  <div class="pick"><span class="label">📖 Read:</span><span id="book"></span></div>
+
+  <div class="note">True random. Not Notion fake random. 😄</div>
+</div>
+
+<script>
+const movies = [
+  "November",
+  "The Prestige",
+  "Perfect Blue",
+  "Dune",
+  "Memories of Murder"
+];
+
+const albums = [
+  "Hybrid Theory",
+  "Toxicity",
+  "The Dark Knight Rises",
+  "Queen of the Damned",
+  "Hold Your Colour"
+];
+
+const books = [
+  "The Lord of the Rings",
+  "Divina Commedia",
+  "The Old Man and the Sea",
+  "John Williams: A Life in Music",
+  "Film Music of Hans Zimmer Vol. 2"
+];
+
+function pick(list){
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function shuffle(){
+  document.getElementById("movie").textContent = pick(movies);
+  document.getElementById("album").textContent = pick(albums);
+  document.getElementById("book").textContent = pick(books);
+}
+
+shuffle();
+</script>
+</body>
+</html>
