@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Entertainment Picker</title>
+<title>Project Curator</title>
 
 <style>
 body{
@@ -17,7 +17,7 @@ body{
   border:1px solid #e6e6e6;
   border-radius:14px;
   padding:14px;
-  max-width:520px;
+  max-width:560px;
   margin:auto;
 }
 .header{
@@ -38,22 +38,39 @@ button{
   cursor:pointer;
   font-size:12px;
 }
-.pick{
+.movie-title{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+.meta{
+  font-size:12px;
+  color:#777;
+  margin-bottom:10px;
+}
+.why{
+  font-size:13px;
+  line-height:1.45;
+  margin-top:8px;
+}
+.row{
   padding:8px 0;
   border-bottom:1px solid #eee;
-  font-size:14px;
 }
-.pick:last-child{
+.row:last-child{
   border-bottom:none;
 }
 .label{
   font-weight:700;
-  margin-right:6px;
 }
 .note{
   margin-top:10px;
   font-size:11px;
   color:#888;
+}
+.error{
+  color:#dc2626;
+  font-weight:600;
 }
 </style>
 </head>
@@ -61,53 +78,78 @@ button{
 <body>
 <div class="card">
   <div class="header">
-    <div class="title">🎲 Random Picks</div>
-    <button onclick="shuffle()">Shuffle</button>
+    <div class="title">🎲 Project Curator</div>
+    <button onclick="shuffleMovie()">Surprise me</button>
   </div>
 
-  <div class="pick"><span class="label">🎬 Watch:</span><span id="movie"></span></div>
-  <div class="pick"><span class="label">🎧 Listen:</span><span id="album"></span></div>
-  <div class="pick"><span class="label">📖 Read:</span><span id="book"></span></div>
+  <div id="movie">Loading movies...</div>
 
-  <div class="note">True random. Not Notion fake random. 😄</div>
+  <div class="note">Powered by Peter's Curated Cinema database.</div>
 </div>
 
 <script>
-const movies = [
-  "November",
-  "The Prestige",
-  "Perfect Blue",
-  "Dune",
-  "Memories of Murder"
-];
-
-const albums = [
-  "Hybrid Theory",
-  "Toxicity",
-  "The Dark Knight Rises",
-  "Queen of the Damned",
-  "Hold Your Colour"
-];
-
-const books = [
-  "The Lord of the Rings",
-  "Divina Commedia",
-  "The Old Man and the Sea",
-  "John Williams: A Life in Music",
-  "Film Music of Hans Zimmer Vol. 2"
-];
+let movies = [];
 
 function pick(list){
   return list[Math.floor(Math.random() * list.length)];
 }
 
-function shuffle(){
-  document.getElementById("movie").textContent = pick(movies);
-  document.getElementById("album").textContent = pick(albums);
-  document.getElementById("book").textContent = pick(books);
+function valueOrUnknown(value){
+  return value === undefined || value === null || value === "" ? "Unknown" : value;
 }
 
-shuffle();
+function shuffleMovie(){
+  if(!movies.length){
+    document.getElementById("movie").innerHTML =
+      '<div class="error">No movies found.</div>';
+    return;
+  }
+
+  const movie = pick(movies);
+
+  const title = valueOrUnknown(movie.title);
+  const year = valueOrUnknown(movie.year);
+  const director = valueOrUnknown(movie.director);
+  const runtime = valueOrUnknown(movie.runtime);
+  const complexity = valueOrUnknown(movie.complexity);
+  const dub = valueOrUnknown(movie.hungarianDub);
+  const why = valueOrUnknown(movie.whyRecommended);
+
+  document.getElementById("movie").innerHTML = `
+    <div class="row">
+      <div class="movie-title">🎬 ${title}</div>
+      <div class="meta">${year} • ${director} • ${runtime} min</div>
+    </div>
+
+    <div class="row">
+      <span class="label">🧠 Complexity:</span> ${complexity}/10
+    </div>
+
+    <div class="row">
+      <span class="label">🇭🇺 Hungarian dub:</span> ${dub}
+    </div>
+
+    <div class="why">
+      <span class="label">Why?</span> ${why}
+    </div>
+  `;
+}
+
+async function loadMovies(){
+  try{
+    const response = await fetch("../data/movies.json");
+    const data = await response.json();
+
+    movies = Array.isArray(data) ? data : data.movies;
+
+    shuffleMovie();
+  }catch(error){
+    document.getElementById("movie").innerHTML =
+      '<div class="error">Could not load movies.json.</div>';
+  }
+}
+
+loadMovies();
 </script>
 </body>
 </html>
