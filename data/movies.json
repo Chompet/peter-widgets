@@ -1,0 +1,3245 @@
+{
+  "project": "Project Curator",
+  "version": "1.0",
+  "notes": "Starter curated movie pool. Hungarian dub statuses are not fully verified unless marked confirmed for Hungarian productions; treat unknown as unverified.",
+  "movies": [
+    {
+      "title": "The Prestige",
+      "year": 2006,
+      "director": "Christopher Nolan",
+      "country": "USA/UK",
+      "runtime": 130,
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Sci-Fi"
+      ],
+      "moods": [
+        "Smart",
+        "Dark",
+        "Mind-bending"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "Obsession, sacrifice and identity wrapped in a beautifully engineered puzzle."
+    },
+    {
+      "title": "Arrival",
+      "year": 2016,
+      "director": "Denis Villeneuve",
+      "country": "USA",
+      "runtime": 116,
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "moods": [
+        "Smart",
+        "Emotional",
+        "Philosophical"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 9,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "Elegant, emotional science fiction about language, grief and time."
+    },
+    {
+      "title": "Memories of Murder",
+      "year": 2003,
+      "director": "Bong Joon-ho",
+      "country": "South Korea",
+      "runtime": 131,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Dark",
+        "Smart",
+        "Bleak"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A haunting procedural that becomes a portrait of institutional failure and obsession."
+    },
+    {
+      "title": "Perfect Blue",
+      "year": 1997,
+      "director": "Satoshi Kon",
+      "country": "Japan",
+      "runtime": 81,
+      "genres": [
+        "Animation",
+        "Psychological Thriller"
+      ],
+      "moods": [
+        "Dark",
+        "Mind-bending",
+        "Disturbing"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A compact psychological nightmare about identity, performance and media."
+    },
+    {
+      "title": "The Handmaiden",
+      "year": 2016,
+      "director": "Park Chan-wook",
+      "country": "South Korea",
+      "runtime": 145,
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Romance"
+      ],
+      "moods": [
+        "Elegant",
+        "Dark",
+        "Twisty"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "Lush, clever and morally slippery storytelling with superb visual control."
+    },
+    {
+      "title": "Oldboy",
+      "year": 2003,
+      "director": "Park Chan-wook",
+      "country": "South Korea",
+      "runtime": 120,
+      "genres": [
+        "Thriller",
+        "Mystery",
+        "Drama"
+      ],
+      "moods": [
+        "Dark",
+        "Violent",
+        "Mind-bending"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A brutal revenge tragedy with one of cinema's most infamous reveals."
+    },
+    {
+      "title": "Parasite",
+      "year": 2019,
+      "director": "Bong Joon-ho",
+      "country": "South Korea",
+      "runtime": 132,
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Satire"
+      ],
+      "moods": [
+        "Smart",
+        "Dark",
+        "Tense"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A razor-sharp class thriller that keeps changing shape without losing control."
+    },
+    {
+      "title": "Burning",
+      "year": 2018,
+      "director": "Lee Chang-dong",
+      "country": "South Korea",
+      "runtime": 148,
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Slow",
+        "Ambiguous",
+        "Haunting"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "An atmospheric slow-burn mystery about class, desire and uncertainty."
+    },
+    {
+      "title": "Stalker",
+      "year": 1979,
+      "director": "Andrei Tarkovsky",
+      "country": "Soviet Union",
+      "runtime": 162,
+      "genres": [
+        "Sci-Fi",
+        "Drama",
+        "Philosophical"
+      ],
+      "moods": [
+        "Slow",
+        "Philosophical",
+        "Hypnotic"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A meditative journey into faith, desire and meaning."
+    },
+    {
+      "title": "Solaris",
+      "year": 1972,
+      "director": "Andrei Tarkovsky",
+      "country": "Soviet Union",
+      "runtime": 167,
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "moods": [
+        "Slow",
+        "Emotional",
+        "Philosophical"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A reflective science-fiction ghost story about memory, guilt and love."
+    },
+    {
+      "title": "The Lives of Others",
+      "year": 2006,
+      "director": "Florian Henckel von Donnersmarck",
+      "country": "Germany",
+      "runtime": 137,
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Smart",
+        "Emotional",
+        "Political"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A precise and deeply humane drama about surveillance and conscience."
+    },
+    {
+      "title": "Incendies",
+      "year": 2010,
+      "director": "Denis Villeneuve",
+      "country": "Canada",
+      "runtime": 131,
+      "genres": [
+        "Drama",
+        "Mystery",
+        "War"
+      ],
+      "moods": [
+        "Dark",
+        "Emotional",
+        "Devastating"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 10,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A devastating family mystery with mythic force and emotional brutality."
+    },
+    {
+      "title": "Prisoners",
+      "year": 2013,
+      "director": "Denis Villeneuve",
+      "country": "USA",
+      "runtime": 153,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Dark",
+        "Tense",
+        "Moral"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A grim, gripping moral thriller about fear, rage and justice."
+    },
+    {
+      "title": "Enemy",
+      "year": 2013,
+      "director": "Denis Villeneuve",
+      "country": "Canada",
+      "runtime": 91,
+      "genres": [
+        "Mystery",
+        "Psychological Drama"
+      ],
+      "moods": [
+        "Weird",
+        "Dark",
+        "Symbolic"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A strange identity puzzle with oppressive atmosphere and lingering unease."
+    },
+    {
+      "title": "Blade Runner 2049",
+      "year": 2017,
+      "director": "Denis Villeneuve",
+      "country": "USA",
+      "runtime": 164,
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "moods": [
+        "Epic",
+        "Melancholic",
+        "Beautiful"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "Monumental visual science fiction about memory, loneliness and personhood."
+    },
+    {
+      "title": "Children of Men",
+      "year": 2006,
+      "director": "Alfonso Cuarón",
+      "country": "UK/USA",
+      "runtime": 109,
+      "genres": [
+        "Sci-Fi",
+        "Thriller",
+        "Drama"
+      ],
+      "moods": [
+        "Bleak",
+        "Urgent",
+        "Human"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A terrifyingly grounded dystopia with astonishing filmmaking momentum."
+    },
+    {
+      "title": "Pan's Labyrinth",
+      "year": 2006,
+      "director": "Guillermo del Toro",
+      "country": "Spain/Mexico",
+      "runtime": 118,
+      "genres": [
+        "Fantasy",
+        "Drama",
+        "War"
+      ],
+      "moods": [
+        "Dark",
+        "Beautiful",
+        "Emotional"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A cruel fairy tale where fantasy and fascism bleed into each other."
+    },
+    {
+      "title": "The Devil's Backbone",
+      "year": 2001,
+      "director": "Guillermo del Toro",
+      "country": "Spain/Mexico",
+      "runtime": 106,
+      "genres": [
+        "Horror",
+        "Drama",
+        "War"
+      ],
+      "moods": [
+        "Ghostly",
+        "Sad",
+        "Atmospheric"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A tender and eerie ghost story rooted in wartime trauma."
+    },
+    {
+      "title": "Her",
+      "year": 2013,
+      "director": "Spike Jonze",
+      "country": "USA",
+      "runtime": 126,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "moods": [
+        "Melancholic",
+        "Smart",
+        "Beautiful"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A gentle futuristic romance about loneliness, intimacy and change."
+    },
+    {
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "year": 2004,
+      "director": "Michel Gondry",
+      "country": "USA",
+      "runtime": 108,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "moods": [
+        "Emotional",
+        "Inventive",
+        "Bittersweet"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A formally playful and painful story about memory and love."
+    },
+    {
+      "title": "Synecdoche, New York",
+      "year": 2008,
+      "director": "Charlie Kaufman",
+      "country": "USA",
+      "runtime": 124,
+      "genres": [
+        "Drama",
+        "Surreal"
+      ],
+      "moods": [
+        "Existential",
+        "Weird",
+        "Devastating"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 9,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A huge, sad, absurd meditation on art, mortality and self-delusion."
+    },
+    {
+      "title": "Adaptation.",
+      "year": 2002,
+      "director": "Spike Jonze",
+      "country": "USA",
+      "runtime": 115,
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Meta"
+      ],
+      "moods": [
+        "Smart",
+        "Funny",
+        "Neurotic"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A hilarious and clever film about writing itself into a corner."
+    },
+    {
+      "title": "Being John Malkovich",
+      "year": 1999,
+      "director": "Spike Jonze",
+      "country": "USA",
+      "runtime": 113,
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Surreal"
+      ],
+      "moods": [
+        "Weird",
+        "Funny",
+        "Dark"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A brilliantly bizarre identity comedy with sharp existential teeth."
+    },
+    {
+      "title": "The Lobster",
+      "year": 2015,
+      "director": "Yorgos Lanthimos",
+      "country": "Ireland/UK/Greece",
+      "runtime": 119,
+      "genres": [
+        "Dark Comedy",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "moods": [
+        "Absurd",
+        "Dark",
+        "Deadpan"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A cold, funny and disturbing satire of relationships and conformity."
+    },
+    {
+      "title": "Dogtooth",
+      "year": 2009,
+      "director": "Yorgos Lanthimos",
+      "country": "Greece",
+      "runtime": 97,
+      "genres": [
+        "Drama",
+        "Dark Comedy"
+      ],
+      "moods": [
+        "Disturbing",
+        "Absurd",
+        "Minimal"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 6,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A controlled and unsettling absurdist experiment about language and control."
+    },
+    {
+      "title": "The Favourite",
+      "year": 2018,
+      "director": "Yorgos Lanthimos",
+      "country": "UK/Ireland/USA",
+      "runtime": 119,
+      "genres": [
+        "Drama",
+        "Comedy",
+        "Historical"
+      ],
+      "moods": [
+        "Sharp",
+        "Darkly Funny",
+        "Elegant"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A poisonous palace comedy with savage performances and formal confidence."
+    },
+    {
+      "title": "The Killing of a Sacred Deer",
+      "year": 2017,
+      "director": "Yorgos Lanthimos",
+      "country": "Ireland/UK",
+      "runtime": 121,
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Horror"
+      ],
+      "moods": [
+        "Cold",
+        "Disturbing",
+        "Mythic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 6,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "An icy moral nightmare with ancient-tragedy logic."
+    },
+    {
+      "title": "A Serious Man",
+      "year": 2009,
+      "director": "Joel and Ethan Coen",
+      "country": "USA",
+      "runtime": 106,
+      "genres": [
+        "Drama",
+        "Dark Comedy"
+      ],
+      "moods": [
+        "Absurd",
+        "Philosophical",
+        "Dry"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A bleakly comic Job story about uncertainty and cosmic indifference."
+    },
+    {
+      "title": "No Country for Old Men",
+      "year": 2007,
+      "director": "Joel and Ethan Coen",
+      "country": "USA",
+      "runtime": 122,
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Drama"
+      ],
+      "moods": [
+        "Tense",
+        "Bleak",
+        "Minimal"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A ruthless and beautifully controlled meditation on violence and fate."
+    },
+    {
+      "title": "Barton Fink",
+      "year": 1991,
+      "director": "Joel and Ethan Coen",
+      "country": "USA/UK",
+      "runtime": 116,
+      "genres": [
+        "Drama",
+        "Dark Comedy",
+        "Surreal"
+      ],
+      "moods": [
+        "Weird",
+        "Claustrophobic",
+        "Smart"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A sweaty Hollywood nightmare about art, ego and hellish writer's block."
+    },
+    {
+      "title": "Fargo",
+      "year": 1996,
+      "director": "Joel and Ethan Coen",
+      "country": "USA/UK",
+      "runtime": 98,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Black Comedy"
+      ],
+      "moods": [
+        "Darkly Funny",
+        "Bleak",
+        "Human"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A perfectly balanced crime story of stupidity, greed and decency."
+    },
+    {
+      "title": "Mulholland Drive",
+      "year": 2001,
+      "director": "David Lynch",
+      "country": "USA/France",
+      "runtime": 147,
+      "genres": [
+        "Mystery",
+        "Drama",
+        "Surreal"
+      ],
+      "moods": [
+        "Dreamlike",
+        "Dark",
+        "Mind-bending"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A terrifying Hollywood dream about identity, desire and failure."
+    },
+    {
+      "title": "Blue Velvet",
+      "year": 1986,
+      "director": "David Lynch",
+      "country": "USA",
+      "runtime": 120,
+      "genres": [
+        "Mystery",
+        "Thriller",
+        "Drama"
+      ],
+      "moods": [
+        "Dark",
+        "Strange",
+        "Disturbing"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A descent beneath suburban surfaces into desire and violence."
+    },
+    {
+      "title": "Lost Highway",
+      "year": 1997,
+      "director": "David Lynch",
+      "country": "USA/France",
+      "runtime": 134,
+      "genres": [
+        "Mystery",
+        "Thriller",
+        "Surreal"
+      ],
+      "moods": [
+        "Nightmarish",
+        "Mind-bending",
+        "Dark"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 6,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A fractured identity nightmare with pure Lynchian dread."
+    },
+    {
+      "title": "The Elephant Man",
+      "year": 1980,
+      "director": "David Lynch",
+      "country": "USA/UK",
+      "runtime": 124,
+      "genres": [
+        "Drama",
+        "Biography"
+      ],
+      "moods": [
+        "Sad",
+        "Human",
+        "Elegant"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 9,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A compassionate and visually rich tragedy about dignity and cruelty."
+    },
+    {
+      "title": "The Tree of Life",
+      "year": 2011,
+      "director": "Terrence Malick",
+      "country": "USA",
+      "runtime": 139,
+      "genres": [
+        "Drama",
+        "Experimental"
+      ],
+      "moods": [
+        "Spiritual",
+        "Beautiful",
+        "Slow"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A cosmic family memory that turns grief into visual poetry."
+    },
+    {
+      "title": "The Thin Red Line",
+      "year": 1998,
+      "director": "Terrence Malick",
+      "country": "USA",
+      "runtime": 170,
+      "genres": [
+        "War",
+        "Drama"
+      ],
+      "moods": [
+        "Philosophical",
+        "Beautiful",
+        "Melancholic"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A war film more interested in soul, nature and fear than spectacle."
+    },
+    {
+      "title": "Ikiru",
+      "year": 1952,
+      "director": "Akira Kurosawa",
+      "country": "Japan",
+      "runtime": 143,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Human",
+        "Sad",
+        "Uplifting"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 10,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A deeply moving film about mortality, bureaucracy and meaning."
+    },
+    {
+      "title": "High and Low",
+      "year": 1963,
+      "director": "Akira Kurosawa",
+      "country": "Japan",
+      "runtime": 143,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Tense",
+        "Moral",
+        "Smart"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A masterful procedural that begins as a moral dilemma and expands into social critique."
+    },
+    {
+      "title": "Rashomon",
+      "year": 1950,
+      "director": "Akira Kurosawa",
+      "country": "Japan",
+      "runtime": 88,
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Philosophical",
+        "Classic",
+        "Ambiguous"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A compact and foundational inquiry into truth and perspective."
+    },
+    {
+      "title": "Seven Samurai",
+      "year": 1954,
+      "director": "Akira Kurosawa",
+      "country": "Japan",
+      "runtime": 207,
+      "genres": [
+        "Drama",
+        "Action"
+      ],
+      "moods": [
+        "Epic",
+        "Human",
+        "Classic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 9,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A towering ensemble epic about duty, class and sacrifice."
+    },
+    {
+      "title": "Ran",
+      "year": 1985,
+      "director": "Akira Kurosawa",
+      "country": "Japan/France",
+      "runtime": 162,
+      "genres": [
+        "Drama",
+        "War",
+        "Epic"
+      ],
+      "moods": [
+        "Tragic",
+        "Epic",
+        "Beautiful"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A monumental Shakespearean tragedy painted in fire, colour and collapse."
+    },
+    {
+      "title": "Harakiri",
+      "year": 1962,
+      "director": "Masaki Kobayashi",
+      "country": "Japan",
+      "runtime": 133,
+      "genres": [
+        "Drama",
+        "Historical"
+      ],
+      "moods": [
+        "Moral",
+        "Devastating",
+        "Precise"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 10,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A devastating anti-authoritarian samurai film built like a moral trap."
+    },
+    {
+      "title": "Kwaidan",
+      "year": 1964,
+      "director": "Masaki Kobayashi",
+      "country": "Japan",
+      "runtime": 183,
+      "genres": [
+        "Horror",
+        "Fantasy",
+        "Anthology"
+      ],
+      "moods": [
+        "Eerie",
+        "Beautiful",
+        "Mythic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A painterly anthology of ghost stories with unforgettable atmosphere."
+    },
+    {
+      "title": "Woman in the Dunes",
+      "year": 1964,
+      "director": "Hiroshi Teshigahara",
+      "country": "Japan",
+      "runtime": 147,
+      "genres": [
+        "Drama",
+        "Surreal"
+      ],
+      "moods": [
+        "Existential",
+        "Claustrophobic",
+        "Symbolic"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "An existential trap-film about desire, labour and absurdity."
+    },
+    {
+      "title": "Audition",
+      "year": 1999,
+      "director": "Takashi Miike",
+      "country": "Japan",
+      "runtime": 115,
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "moods": [
+        "Disturbing",
+        "Slow-burn",
+        "Dark"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 6,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A quiet social drama that curdles into unforgettable horror."
+    },
+    {
+      "title": "Cure",
+      "year": 1997,
+      "director": "Kiyoshi Kurosawa",
+      "country": "Japan",
+      "runtime": 111,
+      "genres": [
+        "Crime",
+        "Horror",
+        "Mystery"
+      ],
+      "moods": [
+        "Hypnotic",
+        "Dark",
+        "Unsettling"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A cold, eerie psychological procedural about suggestion and emptiness."
+    },
+    {
+      "title": "Pulse",
+      "year": 2001,
+      "director": "Kiyoshi Kurosawa",
+      "country": "Japan",
+      "runtime": 119,
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Lonely",
+        "Eerie",
+        "Existential"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A ghost story that feels like depression spreading through technology."
+    },
+    {
+      "title": "Shoplifters",
+      "year": 2018,
+      "director": "Hirokazu Kore-eda",
+      "country": "Japan",
+      "runtime": 121,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Human",
+        "Bittersweet",
+        "Tender"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 9,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A humane and morally complex family drama about chosen bonds."
+    },
+    {
+      "title": "After Life",
+      "year": 1998,
+      "director": "Hirokazu Kore-eda",
+      "country": "Japan",
+      "runtime": 118,
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "moods": [
+        "Gentle",
+        "Philosophical",
+        "Reflective"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A beautiful premise about memory, death and what we choose to keep."
+    },
+    {
+      "title": "Drive My Car",
+      "year": 2021,
+      "director": "Ryusuke Hamaguchi",
+      "country": "Japan",
+      "runtime": 179,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Slow",
+        "Literary",
+        "Emotional"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A patient, layered drama about grief, performance and communication."
+    },
+    {
+      "title": "A Ghost Story",
+      "year": 2017,
+      "director": "David Lowery",
+      "country": "USA",
+      "runtime": 92,
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "moods": [
+        "Slow",
+        "Melancholic",
+        "Existential"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A tiny film with huge feelings about time, loss and place."
+    },
+    {
+      "title": "The Green Knight",
+      "year": 2021,
+      "director": "David Lowery",
+      "country": "USA/Ireland/Canada",
+      "runtime": 130,
+      "genres": [
+        "Fantasy",
+        "Drama"
+      ],
+      "moods": [
+        "Mythic",
+        "Beautiful",
+        "Slow"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A medieval quest film as dream, test and moral poem."
+    },
+    {
+      "title": "The Witch",
+      "year": 2015,
+      "director": "Robert Eggers",
+      "country": "USA/Canada",
+      "runtime": 92,
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Dark",
+        "Folkloric",
+        "Oppressive"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "Puritan dread rendered with unnerving precision and atmosphere."
+    },
+    {
+      "title": "The Lighthouse",
+      "year": 2019,
+      "director": "Robert Eggers",
+      "country": "USA/Canada",
+      "runtime": 109,
+      "genres": [
+        "Drama",
+        "Horror",
+        "Fantasy"
+      ],
+      "moods": [
+        "Weird",
+        "Claustrophobic",
+        "Mythic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A salty, deranged two-hander about madness, masculinity and myth."
+    },
+    {
+      "title": "Midsommar",
+      "year": 2019,
+      "director": "Ari Aster",
+      "country": "USA/Sweden",
+      "runtime": 148,
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Bright",
+        "Disturbing",
+        "Ritualistic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A breakup movie disguised as sunlit folk horror."
+    },
+    {
+      "title": "Hereditary",
+      "year": 2018,
+      "director": "Ari Aster",
+      "country": "USA",
+      "runtime": 127,
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Devastating",
+        "Dark",
+        "Occult"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A family tragedy that weaponizes grief into supernatural horror."
+    },
+    {
+      "title": "The Babadook",
+      "year": 2014,
+      "director": "Jennifer Kent",
+      "country": "Australia",
+      "runtime": 94,
+      "genres": [
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Psychological",
+        "Sad",
+        "Dark"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A monster movie about grief, exhaustion and motherhood."
+    },
+    {
+      "title": "Let the Right One In",
+      "year": 2008,
+      "director": "Tomas Alfredson",
+      "country": "Sweden",
+      "runtime": 114,
+      "genres": [
+        "Horror",
+        "Drama",
+        "Romance"
+      ],
+      "moods": [
+        "Cold",
+        "Tender",
+        "Dark"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A sad, beautiful vampire coming-of-age story."
+    },
+    {
+      "title": "The Wailing",
+      "year": 2016,
+      "director": "Na Hong-jin",
+      "country": "South Korea",
+      "runtime": 156,
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+      ],
+      "moods": [
+        "Chaotic",
+        "Dark",
+        "Spiritual"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A sprawling supernatural nightmare about doubt, fear and belief."
+    },
+    {
+      "title": "The Chaser",
+      "year": 2008,
+      "director": "Na Hong-jin",
+      "country": "South Korea",
+      "runtime": 125,
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "moods": [
+        "Tense",
+        "Dark",
+        "Brutal"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A relentless crime thriller with raw urgency and moral ugliness."
+    },
+    {
+      "title": "Mother",
+      "year": 2009,
+      "director": "Bong Joon-ho",
+      "country": "South Korea",
+      "runtime": 129,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Dark",
+        "Emotional",
+        "Twisty"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A strange and painful mystery about maternal devotion and denial."
+    },
+    {
+      "title": "The Host",
+      "year": 2006,
+      "director": "Bong Joon-ho",
+      "country": "South Korea",
+      "runtime": 120,
+      "genres": [
+        "Monster",
+        "Drama",
+        "Satire"
+      ],
+      "moods": [
+        "Funny",
+        "Dark",
+        "Political"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A monster movie with family chaos, satire and genuine sadness."
+    },
+    {
+      "title": "Snowpiercer",
+      "year": 2013,
+      "director": "Bong Joon-ho",
+      "country": "South Korea/Czech Republic",
+      "runtime": 126,
+      "genres": [
+        "Sci-Fi",
+        "Action",
+        "Satire"
+      ],
+      "moods": [
+        "Stylized",
+        "Political",
+        "Dark"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A brutal class allegory on rails with strange energy."
+    },
+    {
+      "title": "Joint Security Area",
+      "year": 2000,
+      "director": "Park Chan-wook",
+      "country": "South Korea",
+      "runtime": 110,
+      "genres": [
+        "Drama",
+        "Thriller",
+        "War"
+      ],
+      "moods": [
+        "Human",
+        "Political",
+        "Sad"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A border tragedy about friendship caught inside political machinery."
+    },
+    {
+      "title": "The Secret in Their Eyes",
+      "year": 2009,
+      "director": "Juan José Campanella",
+      "country": "Argentina",
+      "runtime": 129,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Melancholic",
+        "Romantic",
+        "Dark"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A moving crime drama about memory, justice and lost time."
+    },
+    {
+      "title": "City of God",
+      "year": 2002,
+      "director": "Fernando Meirelles and Kátia Lund",
+      "country": "Brazil",
+      "runtime": 130,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Energetic",
+        "Violent",
+        "Tragic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A dazzling and tragic portrait of violence, poverty and survival."
+    },
+    {
+      "title": "Amores Perros",
+      "year": 2000,
+      "director": "Alejandro González Iñárritu",
+      "country": "Mexico",
+      "runtime": 154,
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Raw",
+        "Interwoven",
+        "Dark"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A brutal triptych of love, violence and chance."
+    },
+    {
+      "title": "Biutiful",
+      "year": 2010,
+      "director": "Alejandro González Iñárritu",
+      "country": "Spain/Mexico",
+      "runtime": 148,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Bleak",
+        "Emotional",
+        "Spiritual"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A heavy, compassionate descent into mortality and responsibility."
+    },
+    {
+      "title": "Birdman",
+      "year": 2014,
+      "director": "Alejandro González Iñárritu",
+      "country": "USA",
+      "runtime": 119,
+      "genres": [
+        "Drama",
+        "Comedy"
+      ],
+      "moods": [
+        "Meta",
+        "Energetic",
+        "Neurotic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A theatrical, restless satire about ego, art and relevance."
+    },
+    {
+      "title": "The Revenant",
+      "year": 2015,
+      "director": "Alejandro González Iñárritu",
+      "country": "USA",
+      "runtime": 156,
+      "genres": [
+        "Adventure",
+        "Drama"
+      ],
+      "moods": [
+        "Brutal",
+        "Beautiful",
+        "Survival"
+      ],
+      "complexity": 6,
+      "emotionalImpact": 7,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A punishing survival odyssey with extraordinary physical filmmaking."
+    },
+    {
+      "title": "Roma",
+      "year": 2018,
+      "director": "Alfonso Cuarón",
+      "country": "Mexico",
+      "runtime": 135,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Quiet",
+        "Beautiful",
+        "Human"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A patient and visually exquisite memory-piece about care and class."
+    },
+    {
+      "title": "Y Tu Mamá También",
+      "year": 2001,
+      "director": "Alfonso Cuarón",
+      "country": "Mexico",
+      "runtime": 106,
+      "genres": [
+        "Drama",
+        "Road Movie"
+      ],
+      "moods": [
+        "Sensual",
+        "Melancholic",
+        "Human"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A coming-of-age road film with political and emotional undertow."
+    },
+    {
+      "title": "The Fall",
+      "year": 2006,
+      "director": "Tarsem Singh",
+      "country": "USA/India",
+      "runtime": 117,
+      "genres": [
+        "Fantasy",
+        "Drama",
+        "Adventure"
+      ],
+      "moods": [
+        "Beautiful",
+        "Emotional",
+        "Storybook"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A visually extravagant fairy tale about pain, imagination and storytelling."
+    },
+    {
+      "title": "The Fountain",
+      "year": 2006,
+      "director": "Darren Aronofsky",
+      "country": "USA/Canada",
+      "runtime": 96,
+      "genres": [
+        "Drama",
+        "Sci-Fi",
+        "Romance"
+      ],
+      "moods": [
+        "Spiritual",
+        "Emotional",
+        "Ambitious"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A divisive but beautiful meditation on love, death and transcendence."
+    },
+    {
+      "title": "Requiem for a Dream",
+      "year": 2000,
+      "director": "Darren Aronofsky",
+      "country": "USA",
+      "runtime": 102,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Devastating",
+        "Dark",
+        "Stylized"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A relentless sensory collapse into addiction and delusion."
+    },
+    {
+      "title": "Black Swan",
+      "year": 2010,
+      "director": "Darren Aronofsky",
+      "country": "USA",
+      "runtime": 108,
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Horror"
+      ],
+      "moods": [
+        "Dark",
+        "Psychological",
+        "Intense"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A ballet psychosis film about perfection, identity and control."
+    },
+    {
+      "title": "Pi",
+      "year": 1998,
+      "director": "Darren Aronofsky",
+      "country": "USA",
+      "runtime": 84,
+      "genres": [
+        "Psychological Thriller",
+        "Sci-Fi"
+      ],
+      "moods": [
+        "Paranoid",
+        "Minimal",
+        "Smart"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 6,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A raw mathematical obsession nightmare with DIY intensity."
+    },
+    {
+      "title": "Moon",
+      "year": 2009,
+      "director": "Duncan Jones",
+      "country": "UK",
+      "runtime": 97,
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "moods": [
+        "Lonely",
+        "Smart",
+        "Melancholic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A small, thoughtful sci-fi story about identity and exploitation."
+    },
+    {
+      "title": "Ex Machina",
+      "year": 2014,
+      "director": "Alex Garland",
+      "country": "UK",
+      "runtime": 108,
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "moods": [
+        "Smart",
+        "Cold",
+        "Tense"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A precise chamber thriller about AI, desire and manipulation."
+    },
+    {
+      "title": "Annihilation",
+      "year": 2018,
+      "director": "Alex Garland",
+      "country": "USA/UK",
+      "runtime": 115,
+      "genres": [
+        "Sci-Fi",
+        "Horror",
+        "Drama"
+      ],
+      "moods": [
+        "Weird",
+        "Beautiful",
+        "Unsettling"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A strange evolutionary nightmare with strong visual and sonic identity."
+    },
+    {
+      "title": "Under the Skin",
+      "year": 2013,
+      "director": "Jonathan Glazer",
+      "country": "UK",
+      "runtime": 108,
+      "genres": [
+        "Sci-Fi",
+        "Drama",
+        "Horror"
+      ],
+      "moods": [
+        "Alien",
+        "Minimal",
+        "Haunting"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "An uncanny, wordless-feeling alien film about bodies and empathy."
+    },
+    {
+      "title": "Zone of Interest",
+      "year": 2023,
+      "director": "Jonathan Glazer",
+      "country": "UK/Poland/USA",
+      "runtime": 105,
+      "genres": [
+        "Drama",
+        "Historical"
+      ],
+      "moods": [
+        "Cold",
+        "Disturbing",
+        "Formal"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A chilling formal study of evil as ordinary domestic life."
+    },
+    {
+      "title": "Sexy Beast",
+      "year": 2000,
+      "director": "Jonathan Glazer",
+      "country": "UK/Spain",
+      "runtime": 89,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Tense",
+        "Stylized",
+        "Darkly Funny"
+      ],
+      "complexity": 6,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A compact crime film powered by atmosphere and menace."
+    },
+    {
+      "title": "12 Angry Men",
+      "year": 1957,
+      "director": "Sidney Lumet",
+      "country": "USA",
+      "runtime": 96,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Smart",
+        "Moral",
+        "Tense"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A near-perfect chamber drama about doubt, prejudice and persuasion."
+    },
+    {
+      "title": "Network",
+      "year": 1976,
+      "director": "Sidney Lumet",
+      "country": "USA",
+      "runtime": 121,
+      "genres": [
+        "Drama",
+        "Satire"
+      ],
+      "moods": [
+        "Angry",
+        "Smart",
+        "Prophetic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A furious media satire that still feels frighteningly current."
+    },
+    {
+      "title": "Dog Day Afternoon",
+      "year": 1975,
+      "director": "Sidney Lumet",
+      "country": "USA",
+      "runtime": 125,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Human",
+        "Tense",
+        "Chaotic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A messy, humane crime film driven by character and social pressure."
+    },
+    {
+      "title": "The Verdict",
+      "year": 1982,
+      "director": "Sidney Lumet",
+      "country": "USA",
+      "runtime": 129,
+      "genres": [
+        "Drama",
+        "Legal"
+      ],
+      "moods": [
+        "Moral",
+        "Quiet",
+        "Human"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A restrained redemption drama about failure, dignity and justice."
+    },
+    {
+      "title": "Memento",
+      "year": 2000,
+      "director": "Christopher Nolan",
+      "country": "USA",
+      "runtime": 113,
+      "genres": [
+        "Mystery",
+        "Thriller"
+      ],
+      "moods": [
+        "Smart",
+        "Fragmented",
+        "Dark"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A narrative puzzle that turns memory loss into structure."
+    },
+    {
+      "title": "Insomnia",
+      "year": 2002,
+      "director": "Christopher Nolan",
+      "country": "USA",
+      "runtime": 118,
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Drama"
+      ],
+      "moods": [
+        "Bleak",
+        "Psychological",
+        "Cold"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A solid moral thriller about guilt, fatigue and compromise."
+    },
+    {
+      "title": "Dunkirk",
+      "year": 2017,
+      "director": "Christopher Nolan",
+      "country": "UK/USA",
+      "runtime": 106,
+      "genres": [
+        "War",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Tense",
+        "Formal",
+        "Immersive"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A survival machine built from rhythm, time and pressure."
+    },
+    {
+      "title": "Interstellar",
+      "year": 2014,
+      "director": "Christopher Nolan",
+      "country": "USA/UK",
+      "runtime": 169,
+      "genres": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "moods": [
+        "Epic",
+        "Emotional",
+        "Cosmic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A massive sentimental sci-fi story about love, time and survival."
+    },
+    {
+      "title": "The Dark Knight",
+      "year": 2008,
+      "director": "Christopher Nolan",
+      "country": "USA/UK",
+      "runtime": 152,
+      "genres": [
+        "Crime",
+        "Action",
+        "Drama"
+      ],
+      "moods": [
+        "Dark",
+        "Epic",
+        "Moral"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A blockbuster crime epic with real moral tension and iconic performances."
+    },
+    {
+      "title": "Zodiac",
+      "year": 2007,
+      "director": "David Fincher",
+      "country": "USA",
+      "runtime": 157,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Obsessive",
+        "Dark",
+        "Procedural"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A procedural about obsession, uncertainty and the inability to close the case."
+    },
+    {
+      "title": "Se7en",
+      "year": 1995,
+      "director": "David Fincher",
+      "country": "USA",
+      "runtime": 127,
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Horror"
+      ],
+      "moods": [
+        "Bleak",
+        "Dark",
+        "Tense"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A rain-soaked moral horror disguised as a serial-killer thriller."
+    },
+    {
+      "title": "Fight Club",
+      "year": 1999,
+      "director": "David Fincher",
+      "country": "USA/Germany",
+      "runtime": 139,
+      "genres": [
+        "Drama",
+        "Satire"
+      ],
+      "moods": [
+        "Dark",
+        "Angry",
+        "Mind-bending"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A volatile satire of masculinity, consumerism and self-destruction."
+    },
+    {
+      "title": "The Social Network",
+      "year": 2010,
+      "director": "David Fincher",
+      "country": "USA",
+      "runtime": 120,
+      "genres": [
+        "Drama",
+        "Biography"
+      ],
+      "moods": [
+        "Sharp",
+        "Smart",
+        "Cold"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A beautifully written modern power drama about ambition and alienation."
+    },
+    {
+      "title": "Gone Girl",
+      "year": 2014,
+      "director": "David Fincher",
+      "country": "USA",
+      "runtime": 149,
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Cynical",
+        "Dark",
+        "Twisty"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A nasty, precise thriller about media, marriage and performance."
+    },
+    {
+      "title": "Panic Room",
+      "year": 2002,
+      "director": "David Fincher",
+      "country": "USA",
+      "runtime": 112,
+      "genres": [
+        "Thriller"
+      ],
+      "moods": [
+        "Tense",
+        "Stylish",
+        "Contained"
+      ],
+      "complexity": 5,
+      "emotionalImpact": 6,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A lean technical thriller with elegant spatial control."
+    },
+    {
+      "title": "Heat",
+      "year": 1995,
+      "director": "Michael Mann",
+      "country": "USA",
+      "runtime": 170,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Cool",
+        "Epic",
+        "Melancholic"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A grand crime drama about professionalism, loneliness and obsession."
+    },
+    {
+      "title": "Collateral",
+      "year": 2004,
+      "director": "Michael Mann",
+      "country": "USA",
+      "runtime": 120,
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "moods": [
+        "Night",
+        "Cool",
+        "Tense"
+      ],
+      "complexity": 6,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A sleek nocturnal thriller with great atmosphere and momentum."
+    },
+    {
+      "title": "Thief",
+      "year": 1981,
+      "director": "Michael Mann",
+      "country": "USA",
+      "runtime": 123,
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Cool",
+        "Melancholic",
+        "Stylized"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A neon crime character study with strong music and mood."
+    },
+    {
+      "title": "The Insider",
+      "year": 1999,
+      "director": "Michael Mann",
+      "country": "USA",
+      "runtime": 157,
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [
+        "Moral",
+        "Tense",
+        "Adult"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A serious corporate whistleblower drama about pressure and integrity."
+    },
+    {
+      "title": "Apocalypse Now",
+      "year": 1979,
+      "director": "Francis Ford Coppola",
+      "country": "USA",
+      "runtime": 147,
+      "genres": [
+        "War",
+        "Drama"
+      ],
+      "moods": [
+        "Mad",
+        "Epic",
+        "Dark"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 10,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A hallucinatory war odyssey into violence, myth and madness."
+    },
+    {
+      "title": "The Conversation",
+      "year": 1974,
+      "director": "Francis Ford Coppola",
+      "country": "USA",
+      "runtime": 113,
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Paranoid",
+        "Quiet",
+        "Smart"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A surveillance thriller about guilt, privacy and interpretation."
+    },
+    {
+      "title": "The Godfather",
+      "year": 1972,
+      "director": "Francis Ford Coppola",
+      "country": "USA",
+      "runtime": 175,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Epic",
+        "Tragic",
+        "Elegant"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 9,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A monumental family tragedy about power, loyalty and corruption."
+    },
+    {
+      "title": "The Godfather Part II",
+      "year": 1974,
+      "director": "Francis Ford Coppola",
+      "country": "USA",
+      "runtime": 202,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Epic",
+        "Tragic",
+        "Cold"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "An even darker expansion of power, memory and moral decay."
+    },
+    {
+      "title": "Once Upon a Time in America",
+      "year": 1984,
+      "director": "Sergio Leone",
+      "country": "Italy/USA",
+      "runtime": 229,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Melancholic",
+        "Epic",
+        "Dreamlike"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 9,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A huge, sad memory palace of friendship, betrayal and time."
+    },
+    {
+      "title": "Once Upon a Time in the West",
+      "year": 1968,
+      "director": "Sergio Leone",
+      "country": "Italy/USA",
+      "runtime": 166,
+      "genres": [
+        "Western",
+        "Drama"
+      ],
+      "moods": [
+        "Epic",
+        "Mythic",
+        "Slow"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A mythic western opera with unforgettable music and patience."
+    },
+    {
+      "title": "The Good, the Bad and the Ugly",
+      "year": 1966,
+      "director": "Sergio Leone",
+      "country": "Italy/Spain/West Germany",
+      "runtime": 178,
+      "genres": [
+        "Western",
+        "Adventure"
+      ],
+      "moods": [
+        "Epic",
+        "Iconic",
+        "Stylized"
+      ],
+      "complexity": 6,
+      "emotionalImpact": 7,
+      "cinematicValue": 10,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A legendary western built from tension, faces and music."
+    },
+    {
+      "title": "A Prophet",
+      "year": 2009,
+      "director": "Jacques Audiard",
+      "country": "France",
+      "runtime": 155,
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "moods": [
+        "Dark",
+        "Prison",
+        "Character"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A prison rise story with grit, intelligence and moral ambiguity."
+    },
+    {
+      "title": "Rust and Bone",
+      "year": 2012,
+      "director": "Jacques Audiard",
+      "country": "France/Belgium",
+      "runtime": 120,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "moods": [
+        "Raw",
+        "Emotional",
+        "Human"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A bruised, physical drama about trauma, intimacy and survival."
+    },
+    {
+      "title": "The Beat That My Heart Skipped",
+      "year": 2005,
+      "director": "Jacques Audiard",
+      "country": "France",
+      "runtime": 107,
+      "genres": [
+        "Drama",
+        "Crime",
+        "Music"
+      ],
+      "moods": [
+        "Restless",
+        "Emotional",
+        "Gritty"
+      ],
+      "complexity": 7,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A tense character drama about violence, music and possible escape."
+    },
+    {
+      "title": "The Hunt",
+      "year": 2012,
+      "director": "Thomas Vinterberg",
+      "country": "Denmark",
+      "runtime": 115,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Devastating",
+        "Moral",
+        "Tense"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 9,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A horrifying social drama about accusation, trust and collective panic."
+    },
+    {
+      "title": "Another Round",
+      "year": 2020,
+      "director": "Thomas Vinterberg",
+      "country": "Denmark",
+      "runtime": 117,
+      "genres": [
+        "Drama",
+        "Comedy"
+      ],
+      "moods": [
+        "Bittersweet",
+        "Human",
+        "Funny"
+      ],
+      "complexity": 6,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A humane and surprisingly moving film about alcohol, routine and lost vitality."
+    },
+    {
+      "title": "Festen",
+      "year": 1998,
+      "director": "Thomas Vinterberg",
+      "country": "Denmark",
+      "runtime": 105,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Raw",
+        "Family",
+        "Devastating"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A brutal family gathering that detonates buried truth."
+    },
+    {
+      "title": "The Celebration",
+      "year": 1998,
+      "director": "Thomas Vinterberg",
+      "country": "Denmark",
+      "runtime": 105,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Raw",
+        "Family",
+        "Devastating"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 6,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "Alternative title entry for a Dogme-style family collapse."
+    },
+    {
+      "title": "The Seventh Seal",
+      "year": 1957,
+      "director": "Ingmar Bergman",
+      "country": "Sweden",
+      "runtime": 96,
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "moods": [
+        "Philosophical",
+        "Classic",
+        "Dark"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A medieval confrontation with death, faith and silence."
+    },
+    {
+      "title": "Persona",
+      "year": 1966,
+      "director": "Ingmar Bergman",
+      "country": "Sweden",
+      "runtime": 83,
+      "genres": [
+        "Drama",
+        "Psychological"
+      ],
+      "moods": [
+        "Experimental",
+        "Intense",
+        "Ambiguous"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A radical identity drama about performance, silence and psychic merging."
+    },
+    {
+      "title": "Wild Strawberries",
+      "year": 1957,
+      "director": "Ingmar Bergman",
+      "country": "Sweden",
+      "runtime": 91,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Reflective",
+        "Gentle",
+        "Melancholic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "An old man's journey through memory, regret and grace."
+    },
+    {
+      "title": "Cries and Whispers",
+      "year": 1972,
+      "director": "Ingmar Bergman",
+      "country": "Sweden",
+      "runtime": 91,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Painful",
+        "Beautiful",
+        "Intimate"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "An austere chamber of suffering, family and mortality."
+    },
+    {
+      "title": "Fanny and Alexander",
+      "year": 1982,
+      "director": "Ingmar Bergman",
+      "country": "Sweden/France/West Germany",
+      "runtime": 188,
+      "genres": [
+        "Drama",
+        "Family"
+      ],
+      "moods": [
+        "Rich",
+        "Literary",
+        "Emotional"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 8,
+      "partnerFriendly": true,
+      "hungarianDub": "unknown",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A dense, warm and dark family epic with theatrical magic."
+    },
+    {
+      "title": "The Turin Horse",
+      "year": 2011,
+      "director": "Béla Tarr",
+      "country": "Hungary",
+      "runtime": 146,
+      "genres": [
+        "Drama",
+        "Experimental"
+      ],
+      "moods": [
+        "Bleak",
+        "Slow",
+        "Apocalyptic"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A monumental slow-cinema apocalypse of routine, wind and despair."
+    },
+    {
+      "title": "Werckmeister Harmonies",
+      "year": 2000,
+      "director": "Béla Tarr",
+      "country": "Hungary",
+      "runtime": 145,
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "moods": [
+        "Bleak",
+        "Hypnotic",
+        "Political"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 7,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "A mesmerizing Hungarian vision of social collapse and cosmic dread."
+    },
+    {
+      "title": "Satantango",
+      "year": 1994,
+      "director": "Béla Tarr",
+      "country": "Hungary",
+      "runtime": 439,
+      "genres": [
+        "Drama"
+      ],
+      "moods": [
+        "Monumental",
+        "Bleak",
+        "Slow"
+      ],
+      "complexity": 10,
+      "emotionalImpact": 7,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A legendary endurance epic of decay, false hope and muddy apocalypse."
+    },
+    {
+      "title": "Son of Saul",
+      "year": 2015,
+      "director": "László Nemes",
+      "country": "Hungary",
+      "runtime": 107,
+      "genres": [
+        "Drama",
+        "War"
+      ],
+      "moods": [
+        "Devastating",
+        "Immersive",
+        "Dark"
+      ],
+      "complexity": 9,
+      "emotionalImpact": 10,
+      "cinematicValue": 8,
+      "partnerFriendly": false,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 5,
+      "source": "Project Curator v1",
+      "whyRecommended": "An overwhelming Holocaust film focused with almost unbearable intensity."
+    },
+    {
+      "title": "On Body and Soul",
+      "year": 2017,
+      "director": "Ildikó Enyedi",
+      "country": "Hungary",
+      "runtime": 116,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "moods": [
+        "Strange",
+        "Tender",
+        "Melancholic"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 8,
+      "cinematicValue": 7,
+      "partnerFriendly": true,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 4,
+      "source": "Project Curator v1",
+      "whyRecommended": "A quiet and unusual Hungarian romance about loneliness and shared dreams."
+    },
+    {
+      "title": "Taxidermia",
+      "year": 2006,
+      "director": "György Pálfi",
+      "country": "Hungary",
+      "runtime": 91,
+      "genres": [
+        "Drama",
+        "Surreal",
+        "Black Comedy"
+      ],
+      "moods": [
+        "Grotesque",
+        "Weird",
+        "Dark"
+      ],
+      "complexity": 8,
+      "emotionalImpact": 6,
+      "cinematicValue": 7,
+      "partnerFriendly": false,
+      "hungarianDub": "confirmed",
+      "watched": false,
+      "priority": 3,
+      "source": "Project Curator v1",
+      "whyRecommended": "A grotesque Hungarian body-history of appetite, family and national absurdity."
+    }
+  ]
+}
