@@ -3,155 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tube Status</title>
+<title>TfL Status</title>
 
 <style>
 body{
-    margin:0;
-    padding:20px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:#ffffff;
-    color:#2f3437;
+  margin:0;
+  padding:14px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#ffffff;
+  color:#2f3437;
 }
-
 .card{
-    max-width:420px;
-    margin:auto;
-    border-radius:14px;
-    border:1px solid #e6e6e6;
-    padding:16px;
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  border:1px solid #e6e6e6;
+  border-radius:14px;
+  padding:14px;
+  max-width:520px;
+  margin:auto;
 }
-
-h2{
-    margin-top:0;
-    margin-bottom:16px;
-    font-size:20px;
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
 }
-
-.line{
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    border-bottom:1px solid #eee;
+.title{
+  font-size:18px;
+  font-weight:700;
 }
-
-.line:last-child{
-    border-bottom:none;
+.updated{
+  font-size:11px;
+  color:#888;
 }
-
-.good{
-    color:#14833b;
-    font-weight:600;
+.section-title{
+  margin-top:12px;
+  margin-bottom:6px;
+  font-size:12px;
+  font-weight:700;
+  color:#666;
+  text-transform:uppercase;
+  letter-spacing:.04em;
 }
-
-.minor{
-    color:#d97706;
-    font-weight:600;
+.problem{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:7px 0;
+  border-bottom:1px solid #eee;
+  font-size:13px;
 }
-
+.problem:last-child{
+  border-bottom:none;
+}
+.name{
+  font-weight:600;
+}
+.status{
+  text-align:right;
+  font-weight:600;
+  color:#b45309;
+}
 .bad{
-    color:#dc2626;
-    font-weight:600;
+  color:#dc2626;
 }
-
-.footer{
-    margin-top:15px;
-    font-size:12px;
-    color:#888;
+.good-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.chip{
+  font-size:12px;
+  padding:4px 7px;
+  border-radius:999px;
+  background:#f1f1f1;
+  border-left:5px solid #999;
+}
+.empty{
+  font-size:13px;
+  color:#14833b;
+  font-weight:600;
+}
+.error{
+  font-size:13px;
+  color:#dc2626;
+  font-weight:600;
 }
 </style>
 </head>
 
 <body>
-
 <div class="card">
+  <div class="header">
+    <div class="title">🚇 TfL Status</div>
+    <div class="updated" id="updated"></div>
+  </div>
 
-<h2>🚇 Tube Status</h2>
-
-<div id="status">
-Loading...
-</div>
-
-<div class="footer" id="updated">
-</div>
-
+  <div id="content">Loading...</div>
 </div>
 
 <script>
+const lineColours = {
+  "bakerloo":"#B36305",
+  "central":"#E32017",
+  "circle":"#FFD300",
+  "district":"#00782A",
+  "hammersmith-city":"#F3A9BB",
+  "jubilee":"#A0A5A9",
+  "metropolitan":"#9B0056",
+  "northern":"#000000",
+  "piccadilly":"#003688",
+  "victoria":"#0098D4",
+  "waterloo-city":"#95CDBA",
+  "elizabeth":"#6950A1",
+  "liberty":"#61686B",
+  "lioness":"#FFA600",
+  "mildmay":"#006FE6",
+  "suffragette":"#18A95D",
+  "weaver":"#B15A00",
+  "windrush":"#D8107C"
+};
 
-const favouriteLines = [
-"northern",
-"victoria",
-"piccadilly",
-"jubilee",
-"central"
-];
+function isGood(status){
+  return status === "Good Service";
+}
+
+function isBad(status){
+  return (
+    status.includes("Severe") ||
+    status.includes("Suspended") ||
+    status.includes("Closure") ||
+    status.includes("Part Closure") ||
+    status.includes("Planned Closure")
+  );
+}
 
 async function loadStatus(){
+  try{
+    const response = await fetch("https://api.tfl.gov.uk/line/mode/tube,overground,elizabeth-line/status");
+    const data = await response.json();
 
-try{
+    const problems = [];
+    const good = [];
 
-const response = await fetch("https://api.tfl.gov.uk/line/mode/tube/status");
+    data.forEach(line => {
+      const status = line.lineStatuses?.[0]?.statusSeverityDescription || "Unknown";
 
-const data = await response.json();
+      const item = {
+        id: line.id,
+        name: line.name,
+        status: status,
+        colour: lineColours[line.id] || "#999"
+      };
 
-const container = document.getElementById("status");
+      if(isGood(status)){
+        good.push(item);
+      }else{
+        problems.push(item);
+      }
+    });
 
-container.innerHTML="";
+    problems.sort((a,b)=>a.name.localeCompare(b.name));
+    good.sort((a,b)=>a.name.localeCompare(b.name));
 
-data
-.filter(line=>favouriteLines.includes(line.id))
-.forEach(line=>{
+    let html = "";
 
-const status=line.lineStatuses[0].statusSeverityDescription;
+    html += `<div class="section-title">Problems</div>`;
 
-let css="good";
+    if(problems.length === 0){
+      html += `<div class="empty">✅ No reported problems</div>`;
+    }else{
+      problems.forEach(line => {
+        html += `
+          <div class="problem">
+            <div class="name">${line.name}</div>
+            <div class="status ${isBad(line.status) ? "bad" : ""}">${line.status}</div>
+          </div>
+        `;
+      });
+    }
 
-if(status.includes("Minor"))
-css="minor";
+    html += `<div class="section-title">Good Service</div>`;
+    html += `<div class="good-grid">`;
 
-if(
-status.includes("Severe") ||
-status.includes("Part") ||
-status.includes("Suspended") ||
-status.includes("Closed")
-)
-css="bad";
+    good.forEach(line => {
+      html += `
+        <div class="chip" style="border-left-color:${line.colour}">
+          ${line.name}
+        </div>
+      `;
+    });
 
-container.innerHTML+=`
-<div class="line">
-<div>${line.name}</div>
-<div class="${css}">${status}</div>
-</div>
-`;
+    html += `</div>`;
 
-});
+    document.getElementById("content").innerHTML = html;
 
-document.getElementById("updated").innerHTML=
-"Updated "+
-new Date().toLocaleTimeString("en-GB",{
-hour:"2-digit",
-minute:"2-digit"
-});
+    document.getElementById("updated").innerHTML =
+      new Date().toLocaleTimeString("en-GB",{
+        hour:"2-digit",
+        minute:"2-digit"
+      });
 
-}
-
-catch{
-
-document.getElementById("status").innerHTML=
-"Couldn't contact TfL.";
-
-}
-
+  }catch(error){
+    document.getElementById("content").innerHTML =
+      `<div class="error">Could not contact TfL.</div>`;
+  }
 }
 
 loadStatus();
-
 setInterval(loadStatus,60000);
-
 </script>
-
 </body>
 </html>
