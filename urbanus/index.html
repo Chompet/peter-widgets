@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Urbanus Fabulae · Album Progress</title>
+<style>
+:root {
+  --page: #11100f;
+  --panel: #1a1816;
+  --panel-2: #211e1a;
+  --text: #f4efe5;
+  --muted: #a69d8e;
+  --line: #393329;
+  --gold: #d7ad62;
+  --gold-soft: #4a3a20;
+  --green: #64c18b;
+  --blue: #72a9e5;
+  --amber: #e2a94d;
+  --red: #d96a62;
+  --purple: #a88bdd;
+  --shadow: 0 20px 55px rgba(0,0,0,.34);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 300px;
+  padding: 12px;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 80% -15%, rgba(215,173,98,.13), transparent 35%),
+    linear-gradient(180deg, #171513, var(--page));
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.dashboard {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(215,173,98,.07), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 37px, rgba(255,255,255,.012) 38px),
+    var(--panel-2);
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(26px, 5vw, 38px); letter-spacing: .02em; }
+.subtitle { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
+.updated { margin-top: 13px; color: var(--muted); font-size: 10px; }
+
+.overall {
+  --progress: 0deg;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--gold) var(--progress), var(--line) 0);
+  position: relative;
+}
+.overall::before { content: ""; position: absolute; inset: 8px; border-radius: inherit; background: var(--panel-2); }
+.overall-copy { position: relative; z-index: 1; text-align: center; }
+.overall-value { display: block; font-size: 27px; font-weight: 850; }
+.overall-label { color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+
+.content { padding: 18px 24px 22px; }
+.progress-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 9px; }
+.progress-card { padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2); }
+.progress-head { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; }
+.progress-head strong { font-size: 13px; color: var(--gold); }
+.progress-track { height: 6px; margin-top: 9px; overflow: hidden; border-radius: 99px; background: var(--line); }
+.progress-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, #9a7338, var(--gold)); }
+
+.summary-row { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)) minmax(210px,1.6fr); gap: 8px; margin-top: 10px; }
+.stat, .focus { min-height: 63px; padding: 10px 12px; border-radius: 11px; background: #161412; border: 1px solid var(--line); }
+.stat-label { color: var(--muted); font-size: 9px; }
+.stat-value { margin-top: 5px; font-size: 19px; font-weight: 800; }
+.focus { border-color: color-mix(in srgb, var(--gold) 35%, var(--line)); background: linear-gradient(120deg, var(--gold-soft), #1d1914); }
+.focus-label { color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.focus-title { margin-top: 4px; font-size: 13px; font-weight: 800; }
+.focus-detail { margin-top: 3px; color: var(--muted); font-size: 9px; line-height: 1.35; }
+
+.section { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+h2 { margin: 0; font-family: Georgia, serif; font-size: 16px; }
+.section-note { color: var(--muted); font-size: 9px; }
+
+.board { overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: #12110f; }
+.board-head, .track-row {
+  display: grid;
+  grid-template-columns: 34px minmax(150px,1.5fr) 65px repeat(4, minmax(76px,.72fr));
+  align-items: center;
+  gap: 6px;
+}
+.board-head { padding: 8px 12px; color: var(--muted); background: #26221d; font-size: 8px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.track-row { min-height: 43px; padding: 6px 12px; border-top: 1px solid #2d2923; }
+.track-row:hover { background: rgba(215,173,98,.045); }
+.track-number { color: var(--gold); font-family: Georgia, serif; font-size: 12px; }
+.track-name { min-width: 0; font-size: 11px; font-weight: 720; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.released { display: inline-block; margin-left: 6px; padding: 2px 5px; border-radius: 99px; color: var(--green); background: rgba(100,193,139,.12); font-size: 7px; text-transform: uppercase; }
+.version { color: var(--muted); font-size: 9px; }
+.stage { display: flex; align-items: center; gap: 5px; min-width: 0; color: var(--muted); font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: #5e574d; }
+.done .dot, .released-status .dot { background: var(--green); box-shadow: 0 0 0 3px rgba(100,193,139,.08); }
+.in-progress .dot { background: var(--amber); }
+.revision-needed .dot { background: var(--red); }
+.ready-to-check .dot, .notes-recorded .dot { background: var(--blue); }
+.approved .dot { background: var(--green); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 9px; color: var(--muted); font-size: 8px; }
+.legend span { display: flex; align-items: center; gap: 4px; }
+.footer { padding: 11px 24px 14px; border-top: 1px solid var(--line); color: var(--muted); background: #151310; font-size: 9px; line-height: 1.5; }
+.error { padding: 28px; color: var(--amber); font-size: 13px; line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .progress-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .summary-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .focus { grid-column: 1 / -1; }
+  .board { overflow-x: auto; }
+  .board-head, .track-row { min-width: 730px; }
+}
+@media (max-width: 480px) {
+  body { padding: 6px; }
+  .hero { padding: 18px 15px; gap: 10px; }
+  .content { padding: 14px 12px 18px; }
+  .overall { width: 87px; height: 87px; }
+  .overall-value { font-size: 21px; }
+  .footer { padding-left: 12px; padding-right: 12px; }
+}
+</style>
+</head>
+<body>
+<main class="dashboard" id="dashboard" aria-live="polite"><div class="error">Loading album progress…</div></main>
+<script>
+const ENCRYPTED_DATA_URL = "https://raw.githubusercontent.com/Chompet/peter-widgets/main/urbanus/data.enc.json";
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>'"]/g, character => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", "'":"&#39;", '"':"&quot;"
+  })[character]);
+}
+
+function clamp(value) { return Math.max(0, Math.min(100, Number(value) || 0)); }
+function statusClass(value) { return String(value || "").toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, ""); }
+function shortStatus(value) {
+  const map = { "Not Started":"Waiting", "In Progress":"In progress", "Revision needed":"Revision", "Done":"Done" };
+  return map[value] || value || "Waiting";
+}
+function progressCard(label, value) {
+  const amount = clamp(value);
+  return `<div class="progress-card"><div class="progress-head"><span>${escapeHtml(label)}</span><strong>${amount}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${amount}%"></div></div></div>`;
+}
+function stage(value) {
+  return `<span class="stage ${statusClass(value)}"><span class="dot"></span>${escapeHtml(shortStatus(value))}</span>`;
+}
+
+function render(data) {
+  const preview = data.mode !== "live";
+  const overall = clamp(data.overall);
+  const rows = (data.tracks || []).map(track => `<div class="track-row">
+    <span class="track-number">${String(track.number).padStart(2,"0")}</span>
+    <span class="track-name">${escapeHtml(track.title)}${track.main === "Released" ? '<span class="released">released</span>' : ""}</span>
+    <span class="version">${escapeHtml(track.version || "—")}</span>
+    ${stage(track.status?.mix)}${stage(track.status?.master)}${stage(track.status?.artwork)}${stage(track.status?.video)}
+  </div>`).join("");
+
+  document.getElementById("dashboard").innerHTML = `<header class="hero">
+    <div><p class="kicker">Album control · production board</p><h1>${escapeHtml(data.album)}</h1><p class="subtitle">${escapeHtml(data.subtitle)}</p><div class="updated">${preview ? "Privacy-safe preview · no album data connected" : `Updated ${escapeHtml(data.updated)}`}</div></div>
+    <div class="overall" style="--progress:${Math.round(overall * 3.6)}deg"><div class="overall-copy"><span class="overall-value">${overall}%</span><span class="overall-label">overall</span></div></div>
+  </header>
+  <div class="content">
+    <section class="progress-grid">
+      ${progressCard("Mixing", data.progress?.mixing)}${progressCard("Mastering", data.progress?.mastering)}${progressCard("Artwork", data.progress?.artwork)}${progressCard("Video", data.progress?.video)}
+    </section>
+    <section class="summary-row">
+      <div class="stat"><div class="stat-label">Mixes complete</div><div class="stat-value">${data.counts?.mixed || 0}/${data.counts?.tracks || 12}</div></div>
+      <div class="stat"><div class="stat-label">Masters complete</div><div class="stat-value">${data.counts?.mastered || 0}/${data.counts?.tracks || 12}</div></div>
+      <div class="stat"><div class="stat-label">Artwork complete</div><div class="stat-value">${data.counts?.artwork || 0}/${data.counts?.tracks || 12}</div></div>
+      <div class="stat"><div class="stat-label">Released tracks</div><div class="stat-value">${data.counts?.released || 0}/${data.counts?.tracks || 12}</div></div>
+      <div class="focus"><div class="focus-label">Current milestone</div><div class="focus-title">${escapeHtml(data.focus?.label)}</div><div class="focus-detail">${escapeHtml(data.focus?.detail)}</div></div>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Track arrivals</h2><span class="section-note">live stage status from the Songs Database</span></div>
+      <div class="board"><div class="board-head"><span>No.</span><span>Track</span><span>Version</span><span>Mix</span><span>Master</span><span>Artwork</span><span>Video</span></div>${rows}</div>
+      <div class="legend"><span class="stage done"><span class="dot"></span>Done</span><span class="stage in-progress"><span class="dot"></span>In progress</span><span class="stage"><span class="dot"></span>Waiting</span><span class="stage revision-needed"><span class="dot"></span>Revision</span></div>
+    </section>
+  </div>
+  <footer class="footer">${preview ? "This preview contains generic track labels only. " : "Only production-stage aggregates and track statuses are displayed. "}Notes, mix-file locations, folder links and song content are excluded from the widget.</footer>`;
+}
+
+function base64urlBytes(value) {
+  const base64 = String(value).replace(/-/g,"+").replace(/_/g,"/");
+  const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4,"=");
+  return Uint8Array.from(atob(padded), character => character.charCodeAt(0));
+}
+function dashboardKey() { return new URLSearchParams(location.hash.slice(1)).get("key"); }
+async function decrypt(payload, encodedKey) {
+  if (payload?.v !== 1 || payload?.alg !== "A256GCM") throw new Error("Unsupported encrypted data format");
+  const raw = base64urlBytes(encodedKey);
+  if (raw.byteLength !== 32) throw new Error("Invalid dashboard key");
+  const key = await crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]);
+  const clear = await crypto.subtle.decrypt({ name:"AES-GCM", iv:base64urlBytes(payload.iv), tagLength:128 }, key, base64urlBytes(payload.ciphertext));
+  return JSON.parse(new TextDecoder().decode(clear));
+}
+async function load() {
+  const key = dashboardKey();
+  if (!key) {
+    const response = await fetch("./data.json", { cache:"no-store" });
+    if (!response.ok) throw new Error("Preview unavailable");
+    return response.json();
+  }
+  const response = await fetch(`${ENCRYPTED_DATA_URL}?t=${Date.now()}`, { cache:"no-store" });
+  if (!response.ok) throw new Error("Encrypted dashboard not ready");
+  return decrypt(await response.json(), key);
+}
+load().then(render).catch(() => {
+  document.getElementById("dashboard").innerHTML = `<div class="error">The secure Urbanus dashboard could not be unlocked. Run the album sync once, then confirm that the embed key matches URBANUS_DASHBOARD_KEY.</div>`;
+});
+</script>
+</body>
+</html>
