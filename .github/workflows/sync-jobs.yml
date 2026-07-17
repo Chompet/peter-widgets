@@ -1,0 +1,39 @@
+name: Sync encrypted job-search dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-search-dashboard-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build encrypted job-search aggregate
+        env:
+          JOBS_NOTION_TOKEN: ${{ secrets.JOBS_NOTION_TOKEN }}
+          JOBS_DASHBOARD_KEY: ${{ secrets.JOBS_DASHBOARD_KEY }}
+        run: node scripts/sync-jobs.mjs
+
+      - name: Commit encrypted aggregate
+        run: |
+          if [ -z "$(git status --porcelain -- jobs/data.enc.json)" ]; then
+            echo "Job-search summary is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jobs/data.enc.json
+          git commit -m "Update encrypted job-search summary"
+          git push
