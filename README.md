@@ -11,11 +11,11 @@ The fitness widget ships with clearly labelled preview data. Its optional live s
 
 The scheduled workflow requires two repository Actions secrets:
 
-- `NOTION_TOKEN` — a read-only Notion internal integration token with access only to the Health Dashboard page.
+- `NOTION_TOKEN` — a read-only Notion internal integration token shared directly with only the Gym Sessions and Daily Health databases. Do not share the parent Health Dashboard page.
 - `FITNESS_DASHBOARD_KEY` — a random 32-byte key encoded as base64url.
 
 After adding both secrets, run **Actions → Sync encrypted fitness dashboard → Run workflow** once. Embed this URL in the private Notion page, replacing the placeholder with the same dashboard key:
 
 `https://chompet.github.io/peter-widgets/fitness/#key=YOUR_BASE64URL_KEY`
 
-The URL fragment is not sent to GitHub. The browser uses it locally to decrypt `fitness/data.enc.json`. Anyone who can see the complete embed URL can decrypt the aggregate, so keep the Notion page private and rotate the key if it is exposed.
+The URL fragment is not sent to GitHub and the key is never stored in browser storage. The browser uses the fragment locally to decrypt `fitness/data.enc.json`. Anyone who can see the complete embed URL can decrypt the aggregate, so keep the Notion page private and rotate the key if it is exposed.
