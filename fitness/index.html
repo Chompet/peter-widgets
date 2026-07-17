@@ -598,15 +598,50 @@ function render(data) {
     </footer>`;
 }
 
-fetch("./data.json", { cache: "no-store" })
-  .then(response => {
-    if (!response.ok) throw new Error("Data unavailable");
+const ENCRYPTED_DATA_URL = "https://raw.githubusercontent.com/Chompet/peter-widgets/main/fitness/data.enc.json";
+
+function base64urlBytes(value) {
+  const base64 = String(value).replace(/-/g, "+").replace(/_/g, "/");
+  const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, "=");
+  return Uint8Array.from(atob(padded), character => character.charCodeAt(0));
+}
+
+function dashboardKey() {
+  const fragment = new URLSearchParams(location.hash.slice(1));
+  return fragment.get("key");
+}
+
+async function decryptSummary(payload, encodedKey) {
+  if (payload?.v !== 1 || payload?.alg !== "A256GCM") throw new Error("Unsupported encrypted data format");
+  const keyBytes = base64urlBytes(encodedKey);
+  if (keyBytes.byteLength !== 32) throw new Error("Invalid dashboard key");
+  const key = await crypto.subtle.importKey("raw", keyBytes, "AES-GCM", false, ["decrypt"]);
+  const cleartext = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: base64urlBytes(payload.iv), tagLength: 128 },
+    key,
+    base64urlBytes(payload.ciphertext)
+  );
+  return JSON.parse(new TextDecoder().decode(cleartext));
+}
+
+async function loadData() {
+  const key = dashboardKey();
+  if (!key) {
+    const response = await fetch("./data.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Preview data unavailable");
     return response.json();
-  })
-  .then(render)
-  .catch(() => {
-    document.getElementById("dashboard").innerHTML = `<div class="error">The health summary could not be loaded. Refresh the widget or check fitness/data.json.</div>`;
-  });
+  }
+  const response = await fetch(`${ENCRYPTED_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+  if (!response.ok) throw new Error("Encrypted summary is not ready");
+  return decryptSummary(await response.json(), key);
+}
+
+loadData().then(render).catch(() => {
+  document.getElementById("dashboard").innerHTML = `
+    <div class="error">
+      The secure fitness summary could not be unlocked. Run the GitHub sync once, then check that the key in the Notion embed URL matches the FITNESS_DASHBOARD_KEY secret.
+    </div>`;
+});
 </script>
 </body>
 </html>

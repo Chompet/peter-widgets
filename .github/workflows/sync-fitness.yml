@@ -1,0 +1,39 @@
+name: Sync encrypted fitness dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fitness-dashboard-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build encrypted aggregate
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          FITNESS_DASHBOARD_KEY: ${{ secrets.FITNESS_DASHBOARD_KEY }}
+        run: node scripts/sync-fitness.mjs
+
+      - name: Commit encrypted aggregate
+        run: |
+          if [ -z "$(git status --porcelain -- fitness/data.enc.json)" ]; then
+            echo "Fitness summary is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fitness/data.enc.json
+          git commit -m "Update encrypted fitness summary"
+          git push
