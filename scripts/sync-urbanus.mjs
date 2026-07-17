@@ -61,7 +61,7 @@ function fallbackScore(status) {
   const value = cleanStatus(status).toLowerCase();
   if (value === "done" || value === "released" || value === "approved") return 100;
   if (value === "in progress" || value === "ready to check" || value === "notes recorded") return 50;
-  if (value.includes("revision")) return 25;
+  if (value.includes("revision")) return 75;
   return 0;
 }
 
@@ -82,7 +82,6 @@ function nextFocus(tracks, progress) {
   if (tracks.some(track => track.review !== "Approved")) return { label: "Final listening pass", detail: "Approve all twelve mixes before mastering" };
   if (progress.mastering < 100) return { label: "Master the album", detail: `${tracks.filter(track => track.status.master !== "Done").length} masters remaining` };
   if (progress.artwork < 100) return { label: "Finish the artwork", detail: `${tracks.filter(track => track.status.artwork !== "Done").length} artwork items remaining` };
-  if (progress.video < 100) return { label: "Complete the visuals", detail: `${tracks.filter(track => track.status.video !== "Done").length} video items remaining` };
   return { label: "Release ready", detail: "Production stages are complete" };
 }
 
@@ -112,8 +111,7 @@ export function buildDashboard(pages, now = new Date()) {
     artwork: average(tracks.map(track => track.scores.artwork)),
     video: average(tracks.map(track => fallbackScore(track.status.video)))
   };
-  const productionScores = pages.map(page => number(page, "Production %")).filter(value => value !== null).map(value => value <= 1 ? value * 100 : value);
-  const overall = productionScores.length ? average(productionScores) : average([progress.mixing, progress.mastering, progress.artwork]);
+  const overall = Math.round(progress.mixing * 0.45 + progress.mastering * 0.35 + progress.artwork * 0.20);
   const updated = new Intl.DateTimeFormat("en-GB", {
     timeZone: TIME_ZONE,
     day: "numeric",
