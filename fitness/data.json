@@ -1,0 +1,37 @@
+{
+  "mode": "preview",
+  "updated": "Not connected",
+  "week": {
+    "label": "This week",
+    "start": "",
+    "end": ""
+  },
+  "targets": {
+    "cardioEquivalentMinutes": 150,
+    "strengthDays": 2,
+    "activeDays": 5
+  },
+  "summary": {
+    "cardioEquivalentMinutes": 0,
+    "strengthDays": 0,
+    "activeDays": 0,
+    "gymSessions": 0,
+    "strengthVolumeKg": 0
+  },
+  "distance": {
+    "rowingKm": 0,
+    "cyclingKm": 0,
+    "runningKm": 0
+  },
+  "days": [
+    { "label": "M", "minutes": 0, "active": false },
+    { "label": "T", "minutes": 0, "active": false },
+    { "label": "W", "minutes": 0, "active": false },
+    { "label": "T", "minutes": 0, "active": false },
+    { "label": "F", "minutes": 0, "active": false },
+    { "label": "S", "minutes": 0, "active": false },
+    { "label": "S", "minutes": 0, "active": false }
+  ],
+  "strengthTrend": [],
+  "latestLoads": []
+}
