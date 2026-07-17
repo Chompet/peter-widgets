@@ -599,7 +599,6 @@ function render(data) {
 }
 
 const ENCRYPTED_DATA_URL = "https://raw.githubusercontent.com/Chompet/peter-widgets/main/fitness/data.enc.json";
-const KEY_STORAGE_NAME = "peter-fitness-dashboard-key";
 
 function base64urlBytes(value) {
   const base64 = String(value).replace(/-/g, "+").replace(/_/g, "/");
@@ -609,13 +608,7 @@ function base64urlBytes(value) {
 
 function dashboardKey() {
   const fragment = new URLSearchParams(location.hash.slice(1));
-  const supplied = fragment.get("key");
-  if (supplied) {
-    localStorage.setItem(KEY_STORAGE_NAME, supplied);
-    history.replaceState(null, "", `${location.pathname}${location.search}`);
-    return supplied;
-  }
-  return localStorage.getItem(KEY_STORAGE_NAME);
+  return fragment.get("key");
 }
 
 async function decryptSummary(payload, encodedKey) {
