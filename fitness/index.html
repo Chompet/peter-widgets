@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Weekly Health Overview</title>
+
+<style>
+:root {
+  --page: #f5f7f6;
+  --card: #ffffff;
+  --card-soft: #f8faf9;
+  --text: #202624;
+  --muted: #69736f;
+  --line: #e5eae7;
+  --green: #1f8a62;
+  --green-soft: #e2f4ec;
+  --blue: #4178c0;
+  --blue-soft: #e7effa;
+  --orange: #c9782c;
+  --orange-soft: #fbefdf;
+  --shadow: 0 12px 34px rgba(32, 50, 42, .08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #161918;
+    --card: #202422;
+    --card-soft: #262b28;
+    --text: #f0f3f1;
+    --muted: #aeb8b3;
+    --line: #353c38;
+    --green: #55c997;
+    --green-soft: #1d3b30;
+    --blue: #7db0ed;
+    --blue-soft: #23354a;
+    --orange: #eba55f;
+    --orange-soft: #463322;
+    --shadow: 0 12px 34px rgba(0, 0, 0, .2);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 12px;
+  min-width: 280px;
+  background: var(--page);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+button, a { font: inherit; }
+
+.dashboard {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero {
+  padding: 19px 20px 17px;
+  background:
+    radial-gradient(circle at 92% -20%, rgba(85, 201, 151, .18), transparent 40%),
+    linear-gradient(135deg, var(--card), var(--card-soft));
+  border-bottom: 1px solid var(--line);
+}
+
+.header-row,
+.section-heading,
+.status-line,
+.load-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(21px, 5vw, 28px);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+.week-label {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mode-badge {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border: 1px solid color-mix(in srgb, var(--orange) 28%, transparent);
+  border-radius: 999px;
+  color: var(--orange);
+  background: var(--orange-soft);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.status-line {
+  justify-content: flex-start;
+  margin-top: 15px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.content { padding: 18px 20px 16px; }
+
+.rings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ring-card {
+  min-width: 0;
+  padding: 12px 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  text-align: center;
+  background: var(--card-soft);
+}
+
+.ring {
+  --progress: 0deg;
+  --ring-colour: var(--green);
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-colour) var(--progress), var(--line) 0);
+  position: relative;
+}
+
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: inherit;
+  background: var(--card-soft);
+}
+
+.ring-value {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.ring-card:nth-child(2) .ring { --ring-colour: var(--blue); }
+.ring-card:nth-child(3) .ring { --ring-colour: var(--orange); }
+
+.ring-title {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ring-target {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.metric {
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--card);
+}
+
+.metric-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.metric-value {
+  margin-top: 4px;
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading { margin-bottom: 11px; }
+
+h2 {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: -.01em;
+}
+
+.section-note {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.activity-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(150px, .65fr);
+  gap: 13px;
+}
+
+.activity-bars {
+  height: 124px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+  align-items: end;
+  padding: 9px 10px 7px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    linear-gradient(to top, transparent 32%, var(--line) 33%, transparent 34%),
+    linear-gradient(to top, transparent 65%, var(--line) 66%, transparent 67%),
+    var(--card-soft);
+}
+
+.day {
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.bar-value {
+  color: var(--muted);
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.day:hover .bar-value { opacity: 1; }
+
+.bar-track {
+  width: min(24px, 80%);
+  height: 77px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--line) 60%, transparent);
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  min-height: 3px;
+  border-radius: 7px;
+  background: linear-gradient(to top, var(--green), color-mix(in srgb, var(--green) 72%, white));
+}
+
+.day.inactive .bar-fill { background: var(--line); }
+
+.day-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.distance-list {
+  display: grid;
+  gap: 7px;
+}
+
+.distance-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: var(--card-soft);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.distance-item strong {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.distance-item span::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.distance-item.cycle span::before { background: var(--blue); }
+.distance-item.run span::before { background: var(--orange); }
+
+.strength-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(170px, .8fr);
+  gap: 13px;
+}
+
+.chart-card,
+.loads {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card-soft);
+}
+
+#strength-chart {
+  width: 100%;
+  height: 108px;
+  display: block;
+  overflow: visible;
+}
+
+.chart-grid { stroke: var(--line); stroke-width: 1; }
+.chart-area { fill: color-mix(in srgb, var(--blue) 14%, transparent); }
+.chart-line { fill: none; stroke: var(--blue); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.chart-dot { fill: var(--card-soft); stroke: var(--blue); stroke-width: 2.5; }
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.loads { display: grid; align-content: center; gap: 2px; }
+
+.load-row {
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.load-row:last-child { border-bottom: 0; }
+.load-value { color: var(--text); font-size: 12px; font-weight: 800; }
+.change { margin-left: 3px; color: var(--green); font-size: 9px; font-weight: 750; }
+.change.neutral { color: var(--muted); }
+
+.footer {
+  padding: 12px 20px 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--card-soft);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.footer a { color: var(--green); text-underline-offset: 2px; }
+.error { padding: 24px; color: var(--orange); font-size: 13px; }
+
+@media (max-width: 560px) {
+  body { padding: 6px; }
+  .dashboard { border-radius: 16px; }
+  .hero, .content { padding-left: 14px; padding-right: 14px; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .activity-layout, .strength-layout { grid-template-columns: 1fr; }
+  .distance-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .distance-item { display: grid; gap: 3px; text-align: center; }
+}
+
+@media (max-width: 370px) {
+  .rings { gap: 5px; }
+  .ring { width: 64px; height: 64px; }
+  .ring-value { font-size: 14px; }
+  .hero, .content { padding-left: 10px; padding-right: 10px; }
+}
+</style>
+</head>
+
+<body>
+<main class="dashboard" id="dashboard" aria-live="polite">
+  <div class="error">Loading weekly health overview…</div>
+</main>
+
+<script>
+const number = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 1 });
+const whole = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 0 });
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function percent(value, target) {
+  return target > 0 ? clamp(value / target, 0, 1) : 0;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>'"]/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "'": "&#39;",
+    '"': "&quot;"
+  })[character]);
+}
+
+function formatDateRange(start, end) {
+  if (!start || !end) return "Current Monday–Sunday period";
+  const options = { day: "numeric", month: "short" };
+  const from = new Date(`${start}T12:00:00`).toLocaleDateString("en-GB", options);
+  const to = new Date(`${end}T12:00:00`).toLocaleDateString("en-GB", options);
+  return `${from} – ${to}`;
+}
+
+function ring(value, target, title, display, targetLabel) {
+  const angle = Math.round(percent(value, target) * 360);
+  return `
+    <div class="ring-card">
+      <div class="ring" style="--progress:${angle}deg" role="img" aria-label="${escapeHtml(title)}: ${escapeHtml(display)}">
+        <span class="ring-value">${escapeHtml(display)}</span>
+      </div>
+      <div class="ring-title">${escapeHtml(title)}</div>
+      <div class="ring-target">${escapeHtml(targetLabel)}</div>
+    </div>`;
+}
+
+function getStatus(data) {
+  const cardio = percent(data.summary.cardioEquivalentMinutes, data.targets.cardioEquivalentMinutes);
+  const strength = percent(data.summary.strengthDays, data.targets.strengthDays);
+  const active = percent(data.summary.activeDays, data.targets.activeDays);
+
+  if (cardio >= 1 && strength >= 1) return "Core weekly targets covered — excellent balance.";
+  if (strength >= 1 && cardio >= .7) return "Strength covered — cardio is close to target.";
+  if (strength >= 1) return "Strength covered — keep building aerobic minutes.";
+  if (cardio >= 1) return "Cardio covered — add another full-body strength day.";
+  if (active >= .6) return "Good consistency — the next session will move the week forward.";
+  return "Week in progress — any purposeful movement counts.";
+}
+
+function activityBars(days) {
+  const max = Math.max(40, ...days.map(day => Number(day.minutes) || 0));
+  return days.map(day => {
+    const minutes = Number(day.minutes) || 0;
+    const height = minutes > 0 ? Math.max(8, Math.round((minutes / max) * 100)) : 4;
+    return `
+      <div class="day ${day.active ? "" : "inactive"}">
+        <span class="bar-value">${whole.format(minutes)}m</span>
+        <span class="bar-track"><span class="bar-fill" style="height:${height}%"></span></span>
+        <span class="day-label">${escapeHtml(day.label)}</span>
+      </div>`;
+  }).join("");
+}
+
+function strengthChart(points) {
+  if (!points.length) return { svg: "", labels: "" };
+  const width = 420;
+  const height = 102;
+  const padding = 8;
+  const values = points.map(point => Number(point.volumeKg) || 0);
+  const minValue = Math.min(...values);
+  const maxValue = Math.max(...values);
+  const range = Math.max(1, maxValue - minValue);
+  const coordinates = values.map((value, index) => {
+    const x = points.length === 1 ? width / 2 : padding + index * ((width - padding * 2) / (points.length - 1));
+    const y = height - padding - ((value - minValue) / range) * (height - padding * 2 - 8);
+    return { x, y };
+  });
+  const line = coordinates.map((point, index) => `${index ? "L" : "M"}${point.x},${point.y}`).join(" ");
+  const area = `${line} L${coordinates.at(-1).x},${height - padding} L${coordinates[0].x},${height - padding} Z`;
+  const dots = coordinates.map(point => `<circle class="chart-dot" cx="${point.x}" cy="${point.y}" r="4"></circle>`).join("");
+  const labels = points.map(point => `<span>${escapeHtml(point.label)}</span>`).join("");
+  return {
+    svg: `<line class="chart-grid" x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}"></line><path class="chart-area" d="${area}"></path><path class="chart-line" d="${line}"></path>${dots}`,
+    labels
+  };
+}
+
+function render(data) {
+  const cardio = Number(data.summary.cardioEquivalentMinutes) || 0;
+  const cardioTarget = Number(data.targets.cardioEquivalentMinutes) || 150;
+  const strength = Number(data.summary.strengthDays) || 0;
+  const strengthTarget = Number(data.targets.strengthDays) || 2;
+  const active = Number(data.summary.activeDays) || 0;
+  const activeTarget = Number(data.targets.activeDays) || 5;
+  const chart = strengthChart(data.strengthTrend || []);
+  const isPreview = data.mode !== "live";
+
+  const loads = (data.latestLoads || []).map(item => {
+    const change = Number(item.change) || 0;
+    const changeMarkup = change > 0
+      ? `<span class="change">+${number.format(change)}</span>`
+      : `<span class="change neutral">—</span>`;
+    return `
+      <div class="load-row">
+        <span>${escapeHtml(item.name)}</span>
+        <span class="load-value">${number.format(item.value)} ${escapeHtml(item.unit)} ${changeMarkup}</span>
+      </div>`;
+  }).join("");
+
+  document.getElementById("dashboard").innerHTML = `
+    <header class="hero">
+      <div class="header-row">
+        <div>
+          <p class="eyebrow">Health · weekly overview</p>
+          <h1>${escapeHtml(data.week.label || "This week")}</h1>
+          <p class="week-label">${escapeHtml(formatDateRange(data.week.start, data.week.end))}</p>
+        </div>
+        <span class="mode-badge">${isPreview ? "Preview data" : `Updated ${escapeHtml(data.updated)}`}</span>
+      </div>
+      <div class="status-line"><span class="status-dot"></span>${escapeHtml(getStatus(data))}</div>
+    </header>
+
+    <div class="content">
+      <section class="rings" aria-label="Weekly target progress">
+        ${ring(cardio, cardioTarget, "Cardio", `${whole.format(cardio)}m`, `of ${whole.format(cardioTarget)} equivalent min`)}
+        ${ring(strength, strengthTarget, "Strength", `${whole.format(strength)}/${whole.format(strengthTarget)}`, "days this week")}
+        ${ring(active, activeTarget, "Active days", `${whole.format(active)}/${whole.format(activeTarget)}`, "consistency target")}
+      </section>
+
+      <section class="metric-grid" aria-label="Weekly totals">
+        <div class="metric"><div class="metric-label">Gym sessions</div><div class="metric-value">${whole.format(data.summary.gymSessions || 0)}</div></div>
+        <div class="metric"><div class="metric-label">Strength volume</div><div class="metric-value">${whole.format(data.summary.strengthVolumeKg || 0)} kg</div></div>
+        <div class="metric"><div class="metric-label">Total distance</div><div class="metric-value">${number.format((data.distance.rowingKm || 0) + (data.distance.cyclingKm || 0) + (data.distance.runningKm || 0))} km</div></div>
+        <div class="metric"><div class="metric-label">Goal completion</div><div class="metric-value">${whole.format(((percent(cardio, cardioTarget) + percent(strength, strengthTarget)) / 2) * 100)}%</div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><h2>Movement through the week</h2><span class="section-note">purposeful exercise minutes</span></div>
+        <div class="activity-layout">
+          <div class="activity-bars">${activityBars(data.days || [])}</div>
+          <div class="distance-list" aria-label="Distance totals">
+            <div class="distance-item row"><span>Row</span><strong>${number.format(data.distance.rowingKm || 0)} km</strong></div>
+            <div class="distance-item cycle"><span>Cycle</span><strong>${number.format(data.distance.cyclingKm || 0)} km</strong></div>
+            <div class="distance-item run"><span>Run</span><strong>${number.format(data.distance.runningKm || 0)} km</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><h2>Strength progression</h2><span class="section-note">volume is useful for comparing similar sessions</span></div>
+        <div class="strength-layout">
+          <div class="chart-card">
+            <svg id="strength-chart" viewBox="0 0 420 102" preserveAspectRatio="none" role="img" aria-label="Strength volume trend">${chart.svg}</svg>
+            <div class="chart-labels">${chart.labels}</div>
+          </div>
+          <div class="loads">${loads || "<div class='section-note'>No load history yet.</div>"}</div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      ${isPreview ? "This is a privacy-safe design preview; it contains no personal Notion data. " : "Only weekly fitness aggregates are displayed. "}
+      Targets follow the <a href="https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/" target="_blank" rel="noreferrer">NHS adult activity guidance</a>: 150 moderate-equivalent aerobic minutes and strength work on at least 2 days. Vigorous minutes count as roughly two moderate minutes for target progress.
+    </footer>`;
+}
+
+fetch("./data.json", { cache: "no-store" })
+  .then(response => {
+    if (!response.ok) throw new Error("Data unavailable");
+    return response.json();
+  })
+  .then(render)
+  .catch(() => {
+    document.getElementById("dashboard").innerHTML = `<div class="error">The health summary could not be loaded. Refresh the widget or check fitness/data.json.</div>`;
+  });
+</script>
+</body>
+</html>
