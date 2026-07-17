@@ -6,6 +6,7 @@ Custom widgets for my Notion dashboard.
 - `/fitness/` — responsive weekly health and fitness overview
 - `/urbanus/` — encrypted Urbanus Fabulae album-production dashboard
 - `/launch/` — encrypted Urbanus Fabulae launch command centre
+- `/daily/` — encrypted Daily Mission Control for tasks, events and work sessions
 - `/jobs/` — encrypted job-search command centre
 
 The fitness widget ships with clearly labelled preview data. Its optional live sync reads only exercise fields from the Gym Sessions and Daily Health data sources, creates a weekly aggregate, and encrypts it with AES-256-GCM before committing it to this public repository. Body weight, sleep, mood, energy, notes, and the Measurements database are never included.
@@ -26,5 +27,7 @@ The URL fragment is not sent to GitHub and the key is never stored in browser st
 The Urbanus dashboard uses a separate read-only Notion connection shared only with the Songs Database, plus separate `URBANUS_NOTION_TOKEN` and `URBANUS_DASHBOARD_KEY` Actions secrets. Its public output is encrypted and excludes notes, mix-file locations, folder links, and song content.
 
 The launch command centre uses a separate read-only connection limited to Urbanus Launch Plan, Songs Database, Artwork Database, and Videos Database, plus `LAUNCH_NOTION_TOKEN` and `LAUNCH_DASHBOARD_KEY` Actions secrets. It exports weighted required-gate progress and aggregate production/asset status. Optional media never lowers launch or album readiness. Notes, definitions of done, working/file links, private paths, backups, and song content are excluded. Embed `https://chompet.github.io/peter-widgets/launch/#key=YOUR_BASE64URL_KEY` only on a private Notion page.
+
+The Daily Mission Control uses a separate read-only connection limited to TO DO LIST, Events, and Work Log, plus `DAILY_NOTION_TOKEN` and `DAILY_DASHBOARD_KEY` Actions secrets. It includes task, event, and work-session titles so the encrypted dashboard can recommend concrete next actions. Notes, project/song relations, locations, work summaries, problems, next-session notes, Notion URLs, and private page content are excluded. Embed `https://chompet.github.io/peter-widgets/daily/#key=YOUR_BASE64URL_KEY` only on a private Notion page.
 
 The job-search dashboard uses a separate read-only Notion connection shared only with Job Applications and Potential Jobs, plus separate `JOBS_NOTION_TOKEN` and `JOBS_DASHBOARD_KEY` Actions secrets. It exports only dashboard fields such as role/company labels, broad location, status, dates, salary, CV version and Fit Score. Notes, Fit Rationale, recruiter/contact relations, email links, job links, Notion page URLs, exact addresses and email subjects are excluded. Embed `https://chompet.github.io/peter-widgets/jobs/#key=YOUR_BASE64URL_KEY` only on a private Notion page.
