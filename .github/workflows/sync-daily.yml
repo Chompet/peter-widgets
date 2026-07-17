@@ -1,0 +1,39 @@
+name: Sync encrypted Daily Mission Control
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-mission-control-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build encrypted daily aggregate
+        env:
+          DAILY_NOTION_TOKEN: ${{ secrets.DAILY_NOTION_TOKEN }}
+          DAILY_DASHBOARD_KEY: ${{ secrets.DAILY_DASHBOARD_KEY }}
+        run: node scripts/sync-daily.mjs
+
+      - name: Commit encrypted aggregate
+        run: |
+          if [ -z "$(git status --porcelain -- daily/data.enc.json)" ]; then
+            echo "Daily summary is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily/data.enc.json
+          git commit -m "Update encrypted Daily Mission Control"
+          git push
