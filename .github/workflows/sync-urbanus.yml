@@ -1,0 +1,39 @@
+name: Sync encrypted Urbanus dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "29 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: urbanus-dashboard-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build encrypted album aggregate
+        env:
+          URBANUS_NOTION_TOKEN: ${{ secrets.URBANUS_NOTION_TOKEN }}
+          URBANUS_DASHBOARD_KEY: ${{ secrets.URBANUS_DASHBOARD_KEY }}
+        run: node scripts/sync-urbanus.mjs
+
+      - name: Commit encrypted aggregate
+        run: |
+          if [ -z "$(git status --porcelain -- urbanus/data.enc.json)" ]; then
+            echo "Urbanus summary is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add urbanus/data.enc.json
+          git commit -m "Update encrypted Urbanus summary"
+          git push
