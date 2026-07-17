@@ -1,0 +1,24 @@
+{
+  "mode": "preview",
+  "album": "Urbanus Fabulae",
+  "subtitle": "Album production dashboard",
+  "updated": "Not connected",
+  "overall": 0,
+  "progress": { "mixing": 0, "mastering": 0, "artwork": 0, "video": 0 },
+  "counts": { "tracks": 12, "mixed": 0, "mastered": 0, "artwork": 0, "released": 0 },
+  "focus": { "label": "Connect the Songs Database", "detail": "Live production data will appear after secure setup" },
+  "tracks": [
+    { "number": 1, "title": "Track 01", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 2, "title": "Track 02", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 3, "title": "Track 03", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 4, "title": "Track 04", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 5, "title": "Track 05", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 6, "title": "Track 06", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 7, "title": "Track 07", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 8, "title": "Track 08", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 9, "title": "Track 09", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 10, "title": "Track 10", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 11, "title": "Track 11", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } },
+    { "number": 12, "title": "Track 12", "version": "", "main": "In Progress", "review": "Not checked", "status": { "mix": "Not Started", "master": "Not Started", "artwork": "Not Started", "video": "Not Started" } }
+  ]
+}
