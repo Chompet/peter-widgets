@@ -25,9 +25,19 @@ test("builds the album dashboard without private notes or file references", () =
   assert.equal(result.counts.tracks, 12);
   assert.equal(result.counts.mixed, 1);
   assert.equal(result.counts.mastered, 1);
-  assert.equal(result.overall, 50);
+  assert.equal(result.overall, 31);
   assert.equal(result.focus.label, "Finish all mixes");
   assert.equal(JSON.stringify(result).includes("private"), false);
+});
+
+test("optional song videos do not reduce production readiness or become the next blocker", () => {
+  const pages = Array.from({ length: 12 }, (_, index) => page(index + 1, `Track ${index + 1}`,
+    "🟢Done", "🟢Done", "🟢Done", "🟠Not Started Yet"));
+  const result = buildDashboard(pages, new Date("2026-07-17T12:00:00Z"));
+  assert.equal(result.overall, 100);
+  assert.equal(result.progress.video, 0);
+  assert.equal(result.focus.label, "Final listening pass");
+  assert.notEqual(result.focus.label, "Complete visuals");
 });
 
 test("encrypts with AES-256-GCM", () => {

@@ -1,0 +1,39 @@
+name: Sync encrypted Urbanus launch dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "53 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: urbanus-launch-dashboard-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build encrypted launch aggregate
+        env:
+          LAUNCH_NOTION_TOKEN: ${{ secrets.LAUNCH_NOTION_TOKEN }}
+          LAUNCH_DASHBOARD_KEY: ${{ secrets.LAUNCH_DASHBOARD_KEY }}
+        run: node scripts/sync-launch.mjs
+
+      - name: Commit encrypted aggregate
+        run: |
+          if [ -z "$(git status --porcelain -- launch/data.enc.json)" ]; then
+            echo "Launch summary is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add launch/data.enc.json
+          git commit -m "Update encrypted Urbanus launch summary"
+          git push

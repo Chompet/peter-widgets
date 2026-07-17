@@ -194,7 +194,7 @@ function render(data) {
   </header>
   <div class="content">
     <section class="progress-grid">
-      ${progressCard("Mixing", data.progress?.mixing)}${progressCard("Mastering", data.progress?.mastering)}${progressCard("Artwork", data.progress?.artwork)}${progressCard("Video", data.progress?.video)}
+      ${progressCard("Mixing · 45%", data.progress?.mixing)}${progressCard("Mastering · 35%", data.progress?.mastering)}${progressCard("Artwork · 20%", data.progress?.artwork)}${progressCard("Optional video", data.progress?.video)}
     </section>
     <section class="summary-row">
       <div class="stat"><div class="stat-label">Mixes complete</div><div class="stat-value">${data.counts?.mixed || 0}/${data.counts?.tracks || 12}</div></div>
@@ -209,7 +209,7 @@ function render(data) {
       <div class="legend"><span class="stage done"><span class="dot"></span>Done</span><span class="stage in-progress"><span class="dot"></span>In progress</span><span class="stage"><span class="dot"></span>Waiting</span><span class="stage revision-needed"><span class="dot"></span>Revision</span></div>
     </section>
   </div>
-  <footer class="footer">${preview ? "This preview contains generic track labels only. " : "Only production-stage aggregates and track statuses are displayed. "}Notes, mix-file locations, folder links and song content are excluded from the widget.</footer>`;
+  <footer class="footer">${preview ? "This preview contains generic track labels only. " : "Only production-stage aggregates and track statuses are displayed. "}Readiness is 45% mixing, 35% mastering and 20% per-song artwork. Video is optional and never lowers readiness. Notes, mix-file locations, folder links and song content are excluded.</footer>`;
 }
 
 function base64urlBytes(value) {
