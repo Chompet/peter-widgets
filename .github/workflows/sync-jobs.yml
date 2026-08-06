@@ -20,20 +20,41 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - name: Build encrypted job-search aggregate
+      - name: Build and publish encrypted job-search aggregate
         env:
           JOBS_NOTION_TOKEN: ${{ secrets.JOBS_NOTION_TOKEN }}
           JOBS_DASHBOARD_KEY: ${{ secrets.JOBS_DASHBOARD_KEY }}
-        run: node scripts/sync-jobs.mjs
-
-      - name: Commit encrypted aggregate
         run: |
-          if [ -z "$(git status --porcelain -- jobs/data.enc.json)" ]; then
-            echo "Job-search summary is unchanged."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add jobs/data.enc.json
-          git commit -m "Update encrypted job-search summary"
-          git push
+
+          for attempt in 1 2 3; do
+            echo "Sync attempt ${attempt} of 3."
+
+            # Always rebuild from the latest main so a concurrent commit cannot
+            # leave this runner trying to push a stale branch.
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/sync-jobs.mjs
+
+            if [ -z "$(git status --porcelain -- jobs/data.enc.json)" ]; then
+              echo "Job-search summary is unchanged."
+              exit 0
+            fi
+
+            git add jobs/data.enc.json
+            git commit -m "Update encrypted job-search summary"
+
+            if git push origin HEAD:main; then
+              echo "Job-search summary published."
+              exit 0
+            fi
+
+            echo "main changed before the push completed; rebuilding and retrying."
+            if [ "${attempt}" -lt 3 ]; then
+              sleep "$((attempt * 2))"
+            fi
+          done
+
+          echo "::error::Could not publish the job-search summary after 3 attempts."
+          exit 1
