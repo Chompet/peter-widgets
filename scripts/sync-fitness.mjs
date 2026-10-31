@@ -241,12 +241,12 @@ async function main() {
   decodeKey(encodedKey);
 
   const currentMonday = mondayOf(localDate());
-  const historyStart = addDays(currentMonday, -56);
+  const historyStart = "1900-01-01";
   const [gymPages, dailyPages] = await Promise.all([
     queryDataSource(GYM_DATA_SOURCE_ID, token, historyStart),
-    queryDataSource(DAILY_DATA_SOURCE_ID, token, currentMonday)
+    queryDataSource(DAILY_DATA_SOURCE_ID, token, historyStart)
   ]);
-  const encrypted = encryptSummary(buildSummary(gymPages, dailyPages), encodedKey);
+  const encrypted = encryptSummary(buildHistory(gymPages, dailyPages), encodedKey);
   await mkdir("fitness", { recursive: true });
   await writeFile("fitness/data.enc.json", `${JSON.stringify(encrypted)}\n`, { mode: 0o600 });
   console.log(`Encrypted aggregate written from ${gymPages.length} gym and ${dailyPages.length} daily records.`);
@@ -257,4 +257,23 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error(error.message);
     process.exitCode = 1;
   });
+}
+
+export function buildHistory(gymPages, dailyPages, now = new Date()) {
+  const today = localDate(now);
+  const dates = [...gymPages, ...dailyPages].map(dateOf).filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d) && d <= today).sort();
+  const weeks = [...new Set(dates.map(mondayOf))];
+  const history = weeks.map(start => buildSummary(gymPages.filter(p => dateOf(p) <= today), dailyPages.filter(p => dateOf(p) <= today), new Date(start + "T12:00:00Z")));
+  const periods = [];
+  for (const kind of ["month", "year"]) {
+    const keys = [...new Set(dates.map(d => d.slice(0, kind === "month" ? 7 : 4)))];
+    for (const key of keys) {
+      const gym = gymPages.filter(p => dateOf(p).startsWith(key) && dateOf(p) <= today);
+      const daily = dailyPages.filter(p => dateOf(p).startsWith(key) && dateOf(p) <= today);
+      const parts = weeks.map(start => buildSummary(gym, daily, new Date(start + "T12:00:00Z")));
+      const sum = field => Object.fromEntries(Object.keys(parts[0]?.[field] || {}).map(k => [k, rounded(parts.reduce((n, p) => n + (Number(p[field][k]) || 0), 0))]));
+      periods.push({kind, key, summary: sum("summary"), distance: sum("distance")});
+    }
+  }
+  return {...buildSummary(gymPages, dailyPages, now), history, periods, coverage: {start: dates[0] || null, end: today}};
 }

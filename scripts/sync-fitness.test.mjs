@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { createDecipheriv, randomBytes } from "node:crypto";
 import test from "node:test";
-import { buildSummary, encryptSummary } from "./sync-fitness.mjs";
+import { buildSummary, buildHistory, encryptSummary } from "./sync-fitness.mjs";
 
 const number = value => ({ type: "number", number: value });
 const checkbox = value => ({ type: "checkbox", checkbox: value });
@@ -51,4 +51,12 @@ test("AES-256-GCM payload decrypts only with the dashboard key", () => {
 
   assert.deepEqual(JSON.parse(decrypted.toString("utf8")), summary);
   assert.equal(payload.alg, "A256GCM");
+});
+
+test("history splits cross-month weeks and excludes future entries", () => {
+ const result = buildHistory([page("2025-12-31"),page("2026-01-01"),page("2026-10-30"),page("2027-01-01")],[],new Date("2026-10-31T12:00:00Z"));
+ assert.equal(result.periods.find(p=>p.key==="2026" && p.kind==="year").summary.gymSessions,2);
+ assert.equal(result.periods.find(p=>p.key==="2025-12").summary.gymSessions,1);
+ assert.equal(result.periods.some(p=>p.key==="2027"),false);
+ assert.equal(result.history.reduce((n,p)=>n+p.summary.gymSessions,0),3);
 });

@@ -598,6 +598,29 @@ function render(data) {
     </footer>`;
 }
 
+
+function renderHistory(data) {
+  if (!data.periods) return;
+  const section = document.createElement("section");
+  section.className = "section";
+  section.style.padding = "20px";
+  section.innerHTML = '<h2>Your history</h2><p class="section-note">Based on dated records in Notion. Missing records are not proof of inactivity.</p><label>View <select id="history-kind"><option value="month">Monthly</option><option value="year">Yearly</option><option value="week">Weekly</option></select></label> <label>Period <select id="history-period"></select></label><div id="history-totals"></div><button id="history-export">Download history CSV</button> <button id="history-print">Print / save PDF</button>';
+  document.getElementById("dashboard").append(section);
+  const kind = section.querySelector("#history-kind"), period = section.querySelector("#history-period");
+  const records = () => kind.value === "week" ? data.history.map(w => ({key: w.week.start, ...w})) : data.periods.filter(p => p.kind === kind.value);
+  function show() {
+    const p = records().find(p => p.key === period.value);
+    section.querySelector("#history-totals").innerHTML = p ? '<div class="metric-grid">' + [["Gym sessions",p.summary.gymSessions],["Active days",p.summary.activeDays],["Cardio equivalent min",p.summary.cardioEquivalentMinutes],["Strength volume kg",p.summary.strengthVolumeKg]].map(([label,value]) => '<div class="metric"><div class="metric-label">'+escapeHtml(label)+'</div><div class="metric-value">'+number.format(value)+'</div></div>').join("")+'</div>' : '<p>No dated records for this view yet.</p>';
+  }
+  function choose() { period.innerHTML = records().slice().reverse().map(p => '<option>'+escapeHtml(p.key)+'</option>').join(""); show(); }
+  kind.onchange = choose; period.onchange = show; choose();
+  section.querySelector("#history-print").onclick = () => window.print();
+  section.querySelector("#history-export").onclick = () => {
+    const rows = [["Period type","Period","Gym sessions","Active days","Strength days","Cardio equivalent minutes","Strength volume kg","Row km","Cycle km","Run km"], ...data.periods.map(p => [p.kind,p.key,p.summary.gymSessions,p.summary.activeDays,p.summary.strengthDays,p.summary.cardioEquivalentMinutes,p.summary.strengthVolumeKg,p.distance.rowingKm,p.distance.cyclingKm,p.distance.runningKm]), ...data.history.map(p => ["week",p.week.start,p.summary.gymSessions,p.summary.activeDays,p.summary.strengthDays,p.summary.cardioEquivalentMinutes,p.summary.strengthVolumeKg,p.distance.rowingKm,p.distance.cyclingKm,p.distance.runningKm])];
+    const url = URL.createObjectURL(new Blob([rows.map(r => r.join(",")).join("\\r\\n")], {type:"text/csv;charset=utf-8"}));
+    const a = document.createElement("a"); a.href=url; a.download="health-history.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
+  };
+}
 const ENCRYPTED_DATA_URL = "https://raw.githubusercontent.com/Chompet/peter-widgets/main/fitness/data.enc.json";
 
 function base64urlBytes(value) {
@@ -636,7 +659,7 @@ async function loadData() {
   return decryptSummary(await response.json(), key);
 }
 
-loadData().then(render).catch(() => {
+loadData().then(data => { render(data); renderHistory(data); }).catch(() => {
   document.getElementById("dashboard").innerHTML = `
     <div class="error">
       The secure fitness summary could not be unlocked. Run the GitHub sync once, then check that the key in the Notion embed URL matches the FITNESS_DASHBOARD_KEY secret.
